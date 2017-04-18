@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "NFMainViewController.h"
 #import "NFBaseNavigationController.h"
-#import "NFRecommendViewController.h"
 
 @interface AppDelegate ()
 
@@ -42,7 +41,7 @@
 - (void)setUpKeyWindow
 {
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    NFRecommendViewController *rootVC = [[NFRecommendViewController alloc] init];
+    NFMainViewController *rootVC = [[NFMainViewController alloc] init];
     NFBaseNavigationController *nav = [[NFBaseNavigationController alloc] initWithRootViewController:rootVC];
     _window.rootViewController = nav;
     [_window makeKeyAndVisible];

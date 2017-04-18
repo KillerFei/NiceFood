@@ -16,4 +16,5 @@
 @property (nonatomic, strong) NSString *img_url;
 @property (nonatomic, strong) NSString *page_url;
 
+@property (nonatomic, strong) NSString *mainId;
 @end

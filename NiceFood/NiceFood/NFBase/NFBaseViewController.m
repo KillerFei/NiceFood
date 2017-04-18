@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     if (!kStringIsEmpty(_navTitle)) {
         self.title = _navTitle;
     }

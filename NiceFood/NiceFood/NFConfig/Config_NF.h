@@ -47,7 +47,19 @@
 #define DT_Base_EdgeColor          RGB(255, 204, 0)
 #define DT_Base_GrayEdgeColor      RGB(179, 179, 179)
 
+#define NF_Nav_TitleColor          [UIColor blackColor]
+#define NF_Nav_TitleFont           SYSTEM_FONT(15)
+#define NF_Nav_Title_BoldFont      BOLD_FONT(16)
+
+#define NF_Base_TitleColor         RGB(106, 106, 106)
+#define NF_Base_TitleFont          SYSTEM_FONT(15)
+
+#define NF_Base_ContentColor       RGB(149, 149, 149)
+#define NF_Base_ContentFont        SYSTEM_FONT(13)
+
 #define NF_Base_BgGrayColor        RGB(241, 242, 243)
+
+#define NF_Base_LineColor          RGB(225, 225, 225)
 //----------------------设备类--------------------------
 //获取屏幕 宽度、高度
 #define KSCREEN_WIDTH              ([UIScreen mainScreen].bounds.size.width)

@@ -22,12 +22,12 @@
     if (!_myView) {
         UICollectionViewFlowLayout *layOut = [[UICollectionViewFlowLayout alloc] init];
         CGFloat itemWidth = (KSCREEN_WIDTH-NF_Base_Space*3)/2;
-        CGFloat imgHeight = 66.5/50*itemWidth;
+        CGFloat imgHeight = 4/3*itemWidth;
         layOut.itemSize = CGSizeMake(itemWidth, imgHeight+60);
         layOut.minimumLineSpacing = NF_Base_Space;
         layOut.minimumInteritemSpacing = NF_Base_Space;
         layOut.sectionInset = UIEdgeInsetsMake(NF_Base_Space, NF_Base_Space, NF_Base_Space, NF_Base_Space);
-        _myView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layOut];
+        _myView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-64) collectionViewLayout:layOut];
         _myView.backgroundColor = NF_Base_BgGrayColor;
         [_myView registerClass:[NFCollectionViewCell class] forCellWithReuseIdentifier:@"cellId"];
         _myView.delegate = self;

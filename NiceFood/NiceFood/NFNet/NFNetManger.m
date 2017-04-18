@@ -8,7 +8,6 @@
 
 #import "NFNetManger.h"
 #import <AdSupport/AdSupport.h>
-#import "NetAPI_NF.h"
 
 @implementation NFNetManger
 
@@ -48,6 +47,34 @@
             }
             if (callBack) {
                 callBack(nil,foots);
+            }
+        } else {
+            if (callBack) {
+                callBack(nil,nil);
+            }
+        }
+    } fail:^(NSError *error) {
+        if (callBack) {
+            callBack(nil,nil);
+        }
+    }];
+}
+
++ (void)getTypesFoodsWithCallBack:(callBack)callBack
+{
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithDictionary:[NFNetManger commonParameter]];
+    [HYBNetworking getWithUrl:kNFTypeListUrl refreshCache:YES params:param success:^(id response) {
+        
+        NSString *result = [(NSDictionary *)response objectForKey:@"result"];
+        if ([result isEqualToString:@"ok"]) {
+            NSArray *data = [(NSDictionary *)response objectForKey:@"data"];
+            NSMutableArray *types = [[NSMutableArray alloc] init];
+            for (NSDictionary *type in data) {
+                NFBaseModel *model = [NFBaseModel mj_objectWithKeyValues:type];
+                [types addObject:model];
+            }
+            if (callBack) {
+                callBack(nil,types);
             }
         } else {
             if (callBack) {

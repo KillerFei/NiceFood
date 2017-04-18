@@ -16,4 +16,6 @@ typedef void(^callBack)(NSError *error ,NSArray *foods);
 + (void)getRecommendFoodsWithPage:(NSInteger)page
                         callBack:(callBack)callBack;
 
++ (void)getTypesFoodsWithCallBack:(callBack)callBack;
+
 @end

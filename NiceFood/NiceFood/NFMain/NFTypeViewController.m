@@ -7,31 +7,83 @@
 //
 
 #import "NFTypeViewController.h"
+#import "NFTypeTableViewCell.h"
 
-@interface NFTypeViewController ()
+@interface NFTypeViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView    *myTab;
+@property (nonatomic, strong) NSMutableArray *dataArr;
 
 @end
 
 @implementation NFTypeViewController
 
+- (UITableView *)myTab
+{
+    if (!_myTab) {
+        _myTab = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-64) style:UITableViewStylePlain];
+        [_myTab registerClass:[NFTypeTableViewCell class] forCellReuseIdentifier:@"cellId"];
+        _myTab.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _myTab.backgroundColor = NF_Base_BgGrayColor;
+        _myTab.rowHeight = (KSCREEN_WIDTH-30)*11.f/20;
+        _myTab.delegate = self;
+        _myTab.dataSource = self;
+    }
+    return _myTab;
+}
+- (NSMutableArray *)dataArr
+{
+    if (!_dataArr) {
+        _dataArr = [[NSMutableArray alloc] init];
+    }
+    return _dataArr;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setUpTabView];
+    [self requestData];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - setUpTabView
+- (void)setUpTabView
+{
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 5)];
+    headView.backgroundColor = NF_Base_BgGrayColor;
+    self.myTab.tableHeaderView = headView;
+    
+    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 5)];
+    footView.backgroundColor = NF_Base_BgGrayColor;
+    self.myTab.tableFooterView = footView;
+    
+     [self.view addSubview:self.myTab];
 }
-*/
-
+#pragma mark - requestData
+- (void)requestData
+{
+    [NFNetManger getTypesFoodsWithCallBack:^(NSError *error, NSArray *foods) {
+       
+        if (!kArrayIsEmpty(foods)) {
+            [self.dataArr removeAllObjects];
+            [self.dataArr addObjectsFromArray:foods];
+            [self.myTab reloadData];
+        }
+    }];
+}
+#pragma mark - tableView 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataArr.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NFTypeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellId"];
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [(NFTypeTableViewCell *)cell configModel:self.dataArr[indexPath.row]];
+}
 @end
