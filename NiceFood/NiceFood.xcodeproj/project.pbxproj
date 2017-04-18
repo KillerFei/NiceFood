@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		77CA8A95FD0ED17D77F2B4A6 /* libPods-NiceFood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB034A09B3392972C09469A6 /* libPods-NiceFood.a */; };
+		FB0510AA1EA5EF1B000E756F /* NFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510A91EA5EF1B000E756F /* NFMainViewController.m */; };
+		FB0510BB1EA5F9B5000E756F /* NFBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510B81EA5F9B5000E756F /* NFBaseModel.m */; };
+		FB0510BC1EA5F9B5000E756F /* NFNetManger.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510BA1EA5F9B5000E756F /* NFNetManger.m */; };
+		FB0510BF1EA5FA67000E756F /* NFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510BE1EA5FA67000E756F /* NFRecommendViewController.m */; };
+		FB0510C21EA5FAAC000E756F /* NFTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510C11EA5FAAC000E756F /* NFTypeViewController.m */; };
+		FB0510C51EA5FAD1000E756F /* NFCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510C41EA5FAD1000E756F /* NFCollectViewController.m */; };
+		FB0510CB1EA60605000E756F /* NFCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510CA1EA60605000E756F /* NFCollectionViewCell.m */; };
+		FB1C6A1F1EA5E2F800EEA4C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A1E1EA5E2F800EEA4C7 /* main.m */; };
+		FB1C6A221EA5E2F800EEA4C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A211EA5E2F800EEA4C7 /* AppDelegate.m */; };
+		FB1C6A2A1EA5E2F800EEA4C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1C6A291EA5E2F800EEA4C7 /* Assets.xcassets */; };
+		FB1C6A2D1EA5E2F800EEA4C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1C6A2B1EA5E2F800EEA4C7 /* LaunchScreen.storyboard */; };
+		FB1C6A371EA5E3C700EEA4C7 /* NFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A361EA5E3C700EEA4C7 /* NFBaseNavigationController.m */; };
+		FB1C6A3D1EA5E4A500EEA4C7 /* NFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A3C1EA5E4A500EEA4C7 /* NFBaseViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		30C3FDA3CCA9DF39D2FA1882 /* Pods-NiceFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceFood.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiceFood/Pods-NiceFood.release.xcconfig"; sourceTree = "<group>"; };
+		EB034A09B3392972C09469A6 /* libPods-NiceFood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiceFood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBAC448062A86C636BA6907B /* Pods-NiceFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceFood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiceFood/Pods-NiceFood.debug.xcconfig"; sourceTree = "<group>"; };
+		FB0510A81EA5EF1B000E756F /* NFMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFMainViewController.h; sourceTree = "<group>"; };
+		FB0510A91EA5EF1B000E756F /* NFMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFMainViewController.m; sourceTree = "<group>"; };
+		FB0510B61EA5F9B5000E756F /* NetAPI_NF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetAPI_NF.h; sourceTree = "<group>"; };
+		FB0510B71EA5F9B5000E756F /* NFBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFBaseModel.h; sourceTree = "<group>"; };
+		FB0510B81EA5F9B5000E756F /* NFBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBaseModel.m; sourceTree = "<group>"; };
+		FB0510B91EA5F9B5000E756F /* NFNetManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFNetManger.h; sourceTree = "<group>"; };
+		FB0510BA1EA5F9B5000E756F /* NFNetManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFNetManger.m; sourceTree = "<group>"; };
+		FB0510BD1EA5FA67000E756F /* NFRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFRecommendViewController.h; sourceTree = "<group>"; };
+		FB0510BE1EA5FA67000E756F /* NFRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFRecommendViewController.m; sourceTree = "<group>"; };
+		FB0510C01EA5FAAC000E756F /* NFTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFTypeViewController.h; sourceTree = "<group>"; };
+		FB0510C11EA5FAAC000E756F /* NFTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFTypeViewController.m; sourceTree = "<group>"; };
+		FB0510C31EA5FAD1000E756F /* NFCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFCollectViewController.h; sourceTree = "<group>"; };
+		FB0510C41EA5FAD1000E756F /* NFCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFCollectViewController.m; sourceTree = "<group>"; };
+		FB0510C91EA60605000E756F /* NFCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFCollectionViewCell.h; sourceTree = "<group>"; };
+		FB0510CA1EA60605000E756F /* NFCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFCollectionViewCell.m; sourceTree = "<group>"; };
+		FB1C6A1A1EA5E2F800EEA4C7 /* NiceFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB1C6A1E1EA5E2F800EEA4C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB1C6A201EA5E2F800EEA4C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FB1C6A211EA5E2F800EEA4C7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FB1C6A291EA5E2F800EEA4C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB1C6A2C1EA5E2F800EEA4C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB1C6A2E1EA5E2F800EEA4C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB1C6A351EA5E3C700EEA4C7 /* NFBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFBaseNavigationController.h; sourceTree = "<group>"; };
+		FB1C6A361EA5E3C700EEA4C7 /* NFBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBaseNavigationController.m; sourceTree = "<group>"; };
+		FB1C6A3B1EA5E4A500EEA4C7 /* NFBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFBaseViewController.h; sourceTree = "<group>"; };
+		FB1C6A3C1EA5E4A500EEA4C7 /* NFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBaseViewController.m; sourceTree = "<group>"; };
+		FB1C6A3F1EA5E51400EEA4C7 /* Config_NF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config_NF.h; sourceTree = "<group>"; };
+		FB1C6A401EA5E52600EEA4C7 /* PrefixHeader_NF.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader_NF.pch; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB1C6A171EA5E2F800EEA4C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77CA8A95FD0ED17D77F2B4A6 /* libPods-NiceFood.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19BBE0179637D8E700E1FDE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB034A09B3392972C09469A6 /* libPods-NiceFood.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6581076BB40CCE113B25CE78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBAC448062A86C636BA6907B /* Pods-NiceFood.debug.xcconfig */,
+				30C3FDA3CCA9DF39D2FA1882 /* Pods-NiceFood.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB0510A71EA5EF03000E756F /* NFMain */ = {
+			isa = PBXGroup;
+			children = (
+				FB0510A81EA5EF1B000E756F /* NFMainViewController.h */,
+				FB0510A91EA5EF1B000E756F /* NFMainViewController.m */,
+				FB0510BD1EA5FA67000E756F /* NFRecommendViewController.h */,
+				FB0510BE1EA5FA67000E756F /* NFRecommendViewController.m */,
+				FB0510C91EA60605000E756F /* NFCollectionViewCell.h */,
+				FB0510CA1EA60605000E756F /* NFCollectionViewCell.m */,
+				FB0510C01EA5FAAC000E756F /* NFTypeViewController.h */,
+				FB0510C11EA5FAAC000E756F /* NFTypeViewController.m */,
+				FB0510C31EA5FAD1000E756F /* NFCollectViewController.h */,
+				FB0510C41EA5FAD1000E756F /* NFCollectViewController.m */,
+			);
+			path = NFMain;
+			sourceTree = "<group>";
+		};
+		FB0510B51EA5F9AE000E756F /* NFNet */ = {
+			isa = PBXGroup;
+			children = (
+				FB0510B61EA5F9B5000E756F /* NetAPI_NF.h */,
+				FB0510B71EA5F9B5000E756F /* NFBaseModel.h */,
+				FB0510B81EA5F9B5000E756F /* NFBaseModel.m */,
+				FB0510B91EA5F9B5000E756F /* NFNetManger.h */,
+				FB0510BA1EA5F9B5000E756F /* NFNetManger.m */,
+			);
+			path = NFNet;
+			sourceTree = "<group>";
+		};
+		FB1C6A111EA5E2F800EEA4C7 = {
+			isa = PBXGroup;
+			children = (
+				FB1C6A1C1EA5E2F800EEA4C7 /* NiceFood */,
+				FB1C6A1B1EA5E2F800EEA4C7 /* Products */,
+				6581076BB40CCE113B25CE78 /* Pods */,
+				19BBE0179637D8E700E1FDE5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FB1C6A1B1EA5E2F800EEA4C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB1C6A1A1EA5E2F800EEA4C7 /* NiceFood.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB1C6A1C1EA5E2F800EEA4C7 /* NiceFood */ = {
+			isa = PBXGroup;
+			children = (
+				FB0510B51EA5F9AE000E756F /* NFNet */,
+				FB0510A71EA5EF03000E756F /* NFMain */,
+				FB1C6A381EA5E41000EEA4C7 /* NFConfig */,
+				FB1C6A341EA5E33300EEA4C7 /* NFBase */,
+				FB1C6A201EA5E2F800EEA4C7 /* AppDelegate.h */,
+				FB1C6A211EA5E2F800EEA4C7 /* AppDelegate.m */,
+				FB1C6A291EA5E2F800EEA4C7 /* Assets.xcassets */,
+				FB1C6A2B1EA5E2F800EEA4C7 /* LaunchScreen.storyboard */,
+				FB1C6A2E1EA5E2F800EEA4C7 /* Info.plist */,
+				FB1C6A1D1EA5E2F800EEA4C7 /* Supporting Files */,
+			);
+			path = NiceFood;
+			sourceTree = "<group>";
+		};
+		FB1C6A1D1EA5E2F800EEA4C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB1C6A1E1EA5E2F800EEA4C7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB1C6A341EA5E33300EEA4C7 /* NFBase */ = {
+			isa = PBXGroup;
+			children = (
+				FB1C6A351EA5E3C700EEA4C7 /* NFBaseNavigationController.h */,
+				FB1C6A361EA5E3C700EEA4C7 /* NFBaseNavigationController.m */,
+				FB1C6A3B1EA5E4A500EEA4C7 /* NFBaseViewController.h */,
+				FB1C6A3C1EA5E4A500EEA4C7 /* NFBaseViewController.m */,
+			);
+			path = NFBase;
+			sourceTree = "<group>";
+		};
+		FB1C6A381EA5E41000EEA4C7 /* NFConfig */ = {
+			isa = PBXGroup;
+			children = (
+				FB1C6A3F1EA5E51400EEA4C7 /* Config_NF.h */,
+				FB1C6A401EA5E52600EEA4C7 /* PrefixHeader_NF.pch */,
+			);
+			path = NFConfig;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB1C6A191EA5E2F800EEA4C7 /* NiceFood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB1C6A311EA5E2F800EEA4C7 /* Build configuration list for PBXNativeTarget "NiceFood" */;
+			buildPhases = (
+				D91A8F8B615F830705B1641D /* [CP] Check Pods Manifest.lock */,
+				FB1C6A161EA5E2F800EEA4C7 /* Sources */,
+				FB1C6A171EA5E2F800EEA4C7 /* Frameworks */,
+				FB1C6A181EA5E2F800EEA4C7 /* Resources */,
+				2A8F2135311880A6B74538E7 /* [CP] Embed Pods Frameworks */,
+				7868A2252CFC67F6C7AA4D2A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NiceFood;
+			productName = NiceFood;
+			productReference = FB1C6A1A1EA5E2F800EEA4C7 /* NiceFood.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB1C6A121EA5E2F800EEA4C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = fly;
+				TargetAttributes = {
+					FB1C6A191EA5E2F800EEA4C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XR62VH56F6;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FB1C6A151EA5E2F800EEA4C7 /* Build configuration list for PBXProject "NiceFood" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB1C6A111EA5E2F800EEA4C7;
+			productRefGroup = FB1C6A1B1EA5E2F800EEA4C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB1C6A191EA5E2F800EEA4C7 /* NiceFood */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB1C6A181EA5E2F800EEA4C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB1C6A2D1EA5E2F800EEA4C7 /* LaunchScreen.storyboard in Resources */,
+				FB1C6A2A1EA5E2F800EEA4C7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A8F2135311880A6B74538E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiceFood/Pods-NiceFood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7868A2252CFC67F6C7AA4D2A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiceFood/Pods-NiceFood-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D91A8F8B615F830705B1641D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB1C6A161EA5E2F800EEA4C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0510C21EA5FAAC000E756F /* NFTypeViewController.m in Sources */,
+				FB0510CB1EA60605000E756F /* NFCollectionViewCell.m in Sources */,
+				FB1C6A3D1EA5E4A500EEA4C7 /* NFBaseViewController.m in Sources */,
+				FB1C6A221EA5E2F800EEA4C7 /* AppDelegate.m in Sources */,
+				FB0510C51EA5FAD1000E756F /* NFCollectViewController.m in Sources */,
+				FB0510AA1EA5EF1B000E756F /* NFMainViewController.m in Sources */,
+				FB0510BF1EA5FA67000E756F /* NFRecommendViewController.m in Sources */,
+				FB0510BC1EA5F9B5000E756F /* NFNetManger.m in Sources */,
+				FB1C6A371EA5E3C700EEA4C7 /* NFBaseNavigationController.m in Sources */,
+				FB0510BB1EA5F9B5000E756F /* NFBaseModel.m in Sources */,
+				FB1C6A1F1EA5E2F800EEA4C7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FB1C6A2B1EA5E2F800EEA4C7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB1C6A2C1EA5E2F800EEA4C7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB1C6A2F1EA5E2F800EEA4C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB1C6A301EA5E2F800EEA4C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB1C6A321EA5E2F800EEA4C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBAC448062A86C636BA6907B /* Pods-NiceFood.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XR62VH56F6;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NiceFood/NFConfig/PrefixHeader_NF.pch";
+				INFOPLIST_FILE = NiceFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFood;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FB1C6A331EA5E2F800EEA4C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30C3FDA3CCA9DF39D2FA1882 /* Pods-NiceFood.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XR62VH56F6;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NiceFood/NFConfig/PrefixHeader_NF.pch";
+				INFOPLIST_FILE = NiceFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFood;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB1C6A151EA5E2F800EEA4C7 /* Build configuration list for PBXProject "NiceFood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB1C6A2F1EA5E2F800EEA4C7 /* Debug */,
+				FB1C6A301EA5E2F800EEA4C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB1C6A311EA5E2F800EEA4C7 /* Build configuration list for PBXNativeTarget "NiceFood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB1C6A321EA5E2F800EEA4C7 /* Debug */,
+				FB1C6A331EA5E2F800EEA4C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB1C6A121EA5E2F800EEA4C7 /* Project object */;
+}
