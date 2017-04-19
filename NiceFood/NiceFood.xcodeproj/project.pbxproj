@@ -13,7 +13,6 @@
 		FB0510BC1EA5F9B5000E756F /* NFNetManger.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510BA1EA5F9B5000E756F /* NFNetManger.m */; };
 		FB0510BF1EA5FA67000E756F /* NFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510BE1EA5FA67000E756F /* NFRecommendViewController.m */; };
 		FB0510C21EA5FAAC000E756F /* NFTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510C11EA5FAAC000E756F /* NFTypeViewController.m */; };
-		FB0510C51EA5FAD1000E756F /* NFCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510C41EA5FAD1000E756F /* NFCollectViewController.m */; };
 		FB0510CB1EA60605000E756F /* NFCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510CA1EA60605000E756F /* NFCollectionViewCell.m */; };
 		FB1C6A1F1EA5E2F800EEA4C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A1E1EA5E2F800EEA4C7 /* main.m */; };
 		FB1C6A221EA5E2F800EEA4C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A211EA5E2F800EEA4C7 /* AppDelegate.m */; };
@@ -21,6 +20,23 @@
 		FB1C6A2D1EA5E2F800EEA4C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1C6A2B1EA5E2F800EEA4C7 /* LaunchScreen.storyboard */; };
 		FB1C6A371EA5E3C700EEA4C7 /* NFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A361EA5E3C700EEA4C7 /* NFBaseNavigationController.m */; };
 		FB1C6A3D1EA5E4A500EEA4C7 /* NFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A3C1EA5E4A500EEA4C7 /* NFBaseViewController.m */; };
+		FB207F5C1EA7017700929744 /* NFWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207F5B1EA7017700929744 /* NFWebViewController.m */; };
+		FB207F5F1EA7043800929744 /* NFCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207F5E1EA7043800929744 /* NFCollectViewController.m */; };
+		FB207F691EA70A9C00929744 /* nf_nav_leftback@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB207F671EA70A9C00929744 /* nf_nav_leftback@3x.png */; };
+		FB207F6A1EA70A9C00929744 /* nf_nav_leftback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB207F681EA70A9C00929744 /* nf_nav_leftback@2x.png */; };
+		FB207F6E1EA70C6900929744 /* NFHudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207F6D1EA70C6900929744 /* NFHudManager.m */; };
+		FB207F831EA7392600929744 /* nf_nav_rightMenu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB207F811EA7392600929744 /* nf_nav_rightMenu@3x.png */; };
+		FB207F841EA7392600929744 /* nf_nav_rightMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB207F821EA7392600929744 /* nf_nav_rightMenu@2x.png */; };
+		FB207FAE1EA7427B00929744 /* NFDisclaimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207FA71EA7427B00929744 /* NFDisclaimerVC.m */; };
+		FB207FAF1EA7427B00929744 /* NFMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207FA91EA7427B00929744 /* NFMenuHeaderView.m */; };
+		FB207FB01EA7427B00929744 /* NFMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207FAB1EA7427B00929744 /* NFMenuTableViewCell.m */; };
+		FB207FB11EA7427B00929744 /* NFMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207FAD1EA7427B00929744 /* NFMenuViewController.m */; };
+		FB207FBC1EA743E100929744 /* NFOnlineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207FBB1EA743E100929744 /* NFOnlineManager.m */; };
+		FB89A92B1EA75EF1002813BD /* nf_menu_declare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB89A9231EA75EF1002813BD /* nf_menu_declare@2x.png */; };
+		FB89A92C1EA75EF1002813BD /* nf_menu_declare1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB89A9241EA75EF1002813BD /* nf_menu_declare1@2x.png */; };
+		FB89A92D1EA75EF1002813BD /* nf_menu_declare3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB89A9251EA75EF1002813BD /* nf_menu_declare3@2x.png */; };
+		FB89A9381EA764C4002813BD /* nf_menu_support@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB89A9371EA764C4002813BD /* nf_menu_support@2x.png */; };
+		FB89A93A1EA764C8002813BD /* nf_menu_support@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB89A9391EA764C8002813BD /* nf_menu_support@3x.png */; };
 		FBDA262B1EA64C7400FDA2A9 /* NFTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDA262A1EA64C7400FDA2A9 /* NFTypeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +55,6 @@
 		FB0510BE1EA5FA67000E756F /* NFRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFRecommendViewController.m; sourceTree = "<group>"; };
 		FB0510C01EA5FAAC000E756F /* NFTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFTypeViewController.h; sourceTree = "<group>"; };
 		FB0510C11EA5FAAC000E756F /* NFTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFTypeViewController.m; sourceTree = "<group>"; };
-		FB0510C31EA5FAD1000E756F /* NFCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFCollectViewController.h; sourceTree = "<group>"; };
-		FB0510C41EA5FAD1000E756F /* NFCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFCollectViewController.m; sourceTree = "<group>"; };
 		FB0510C91EA60605000E756F /* NFCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFCollectionViewCell.h; sourceTree = "<group>"; };
 		FB0510CA1EA60605000E756F /* NFCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFCollectionViewCell.m; sourceTree = "<group>"; };
 		FB1C6A1A1EA5E2F800EEA4C7 /* NiceFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +70,31 @@
 		FB1C6A3C1EA5E4A500EEA4C7 /* NFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBaseViewController.m; sourceTree = "<group>"; };
 		FB1C6A3F1EA5E51400EEA4C7 /* Config_NF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config_NF.h; sourceTree = "<group>"; };
 		FB1C6A401EA5E52600EEA4C7 /* PrefixHeader_NF.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader_NF.pch; sourceTree = "<group>"; };
+		FB207F5A1EA7017700929744 /* NFWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFWebViewController.h; sourceTree = "<group>"; };
+		FB207F5B1EA7017700929744 /* NFWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFWebViewController.m; sourceTree = "<group>"; };
+		FB207F5D1EA7043800929744 /* NFCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFCollectViewController.h; sourceTree = "<group>"; };
+		FB207F5E1EA7043800929744 /* NFCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFCollectViewController.m; sourceTree = "<group>"; };
+		FB207F671EA70A9C00929744 /* nf_nav_leftback@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_nav_leftback@3x.png"; sourceTree = "<group>"; };
+		FB207F681EA70A9C00929744 /* nf_nav_leftback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_nav_leftback@2x.png"; sourceTree = "<group>"; };
+		FB207F6C1EA70C6900929744 /* NFHudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFHudManager.h; sourceTree = "<group>"; };
+		FB207F6D1EA70C6900929744 /* NFHudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFHudManager.m; sourceTree = "<group>"; };
+		FB207F811EA7392600929744 /* nf_nav_rightMenu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_nav_rightMenu@3x.png"; sourceTree = "<group>"; };
+		FB207F821EA7392600929744 /* nf_nav_rightMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_nav_rightMenu@2x.png"; sourceTree = "<group>"; };
+		FB207FA61EA7427B00929744 /* NFDisclaimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFDisclaimerVC.h; sourceTree = "<group>"; };
+		FB207FA71EA7427B00929744 /* NFDisclaimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFDisclaimerVC.m; sourceTree = "<group>"; };
+		FB207FA81EA7427B00929744 /* NFMenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFMenuHeaderView.h; sourceTree = "<group>"; };
+		FB207FA91EA7427B00929744 /* NFMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFMenuHeaderView.m; sourceTree = "<group>"; };
+		FB207FAA1EA7427B00929744 /* NFMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFMenuTableViewCell.h; sourceTree = "<group>"; };
+		FB207FAB1EA7427B00929744 /* NFMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFMenuTableViewCell.m; sourceTree = "<group>"; };
+		FB207FAC1EA7427B00929744 /* NFMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFMenuViewController.h; sourceTree = "<group>"; };
+		FB207FAD1EA7427B00929744 /* NFMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFMenuViewController.m; sourceTree = "<group>"; };
+		FB207FBA1EA743E100929744 /* NFOnlineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFOnlineManager.h; sourceTree = "<group>"; };
+		FB207FBB1EA743E100929744 /* NFOnlineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFOnlineManager.m; sourceTree = "<group>"; };
+		FB89A9231EA75EF1002813BD /* nf_menu_declare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_menu_declare@2x.png"; sourceTree = "<group>"; };
+		FB89A9241EA75EF1002813BD /* nf_menu_declare1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_menu_declare1@2x.png"; sourceTree = "<group>"; };
+		FB89A9251EA75EF1002813BD /* nf_menu_declare3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_menu_declare3@2x.png"; sourceTree = "<group>"; };
+		FB89A9371EA764C4002813BD /* nf_menu_support@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_menu_support@2x.png"; sourceTree = "<group>"; };
+		FB89A9391EA764C8002813BD /* nf_menu_support@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_menu_support@3x.png"; sourceTree = "<group>"; };
 		FBDA26291EA64C7400FDA2A9 /* NFTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFTypeTableViewCell.h; sourceTree = "<group>"; };
 		FBDA262A1EA64C7400FDA2A9 /* NFTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFTypeTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,8 +141,10 @@
 				FB0510C11EA5FAAC000E756F /* NFTypeViewController.m */,
 				FBDA26291EA64C7400FDA2A9 /* NFTypeTableViewCell.h */,
 				FBDA262A1EA64C7400FDA2A9 /* NFTypeTableViewCell.m */,
-				FB0510C31EA5FAD1000E756F /* NFCollectViewController.h */,
-				FB0510C41EA5FAD1000E756F /* NFCollectViewController.m */,
+				FB207F5A1EA7017700929744 /* NFWebViewController.h */,
+				FB207F5B1EA7017700929744 /* NFWebViewController.m */,
+				FB207F5D1EA7043800929744 /* NFCollectViewController.h */,
+				FB207F5E1EA7043800929744 /* NFCollectViewController.m */,
 			);
 			path = NFMain;
 			sourceTree = "<group>";
@@ -111,6 +152,8 @@
 		FB0510B51EA5F9AE000E756F /* NFNet */ = {
 			isa = PBXGroup;
 			children = (
+				FB207FBA1EA743E100929744 /* NFOnlineManager.h */,
+				FB207FBB1EA743E100929744 /* NFOnlineManager.m */,
 				FB0510B61EA5F9B5000E756F /* NetAPI_NF.h */,
 				FB0510B71EA5F9B5000E756F /* NFBaseModel.h */,
 				FB0510B81EA5F9B5000E756F /* NFBaseModel.m */,
@@ -141,6 +184,9 @@
 		FB1C6A1C1EA5E2F800EEA4C7 /* NiceFood */ = {
 			isa = PBXGroup;
 			children = (
+				FB207FA51EA7426E00929744 /* NFMenu */,
+				FB207F6B1EA70C4F00929744 /* NFHud */,
+				FB207F601EA7059700929744 /* NFPic */,
 				FB0510B51EA5F9AE000E756F /* NFNet */,
 				FB0510A71EA5EF03000E756F /* NFMain */,
 				FB1C6A381EA5E41000EEA4C7 /* NFConfig */,
@@ -183,6 +229,46 @@
 			path = NFConfig;
 			sourceTree = "<group>";
 		};
+		FB207F601EA7059700929744 /* NFPic */ = {
+			isa = PBXGroup;
+			children = (
+				FB89A9391EA764C8002813BD /* nf_menu_support@3x.png */,
+				FB89A9371EA764C4002813BD /* nf_menu_support@2x.png */,
+				FB89A9231EA75EF1002813BD /* nf_menu_declare@2x.png */,
+				FB89A9241EA75EF1002813BD /* nf_menu_declare1@2x.png */,
+				FB89A9251EA75EF1002813BD /* nf_menu_declare3@2x.png */,
+				FB207F811EA7392600929744 /* nf_nav_rightMenu@3x.png */,
+				FB207F821EA7392600929744 /* nf_nav_rightMenu@2x.png */,
+				FB207F671EA70A9C00929744 /* nf_nav_leftback@3x.png */,
+				FB207F681EA70A9C00929744 /* nf_nav_leftback@2x.png */,
+			);
+			path = NFPic;
+			sourceTree = "<group>";
+		};
+		FB207F6B1EA70C4F00929744 /* NFHud */ = {
+			isa = PBXGroup;
+			children = (
+				FB207F6C1EA70C6900929744 /* NFHudManager.h */,
+				FB207F6D1EA70C6900929744 /* NFHudManager.m */,
+			);
+			path = NFHud;
+			sourceTree = "<group>";
+		};
+		FB207FA51EA7426E00929744 /* NFMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FB207FAC1EA7427B00929744 /* NFMenuViewController.h */,
+				FB207FAD1EA7427B00929744 /* NFMenuViewController.m */,
+				FB207FA61EA7427B00929744 /* NFDisclaimerVC.h */,
+				FB207FA71EA7427B00929744 /* NFDisclaimerVC.m */,
+				FB207FA81EA7427B00929744 /* NFMenuHeaderView.h */,
+				FB207FA91EA7427B00929744 /* NFMenuHeaderView.m */,
+				FB207FAA1EA7427B00929744 /* NFMenuTableViewCell.h */,
+				FB207FAB1EA7427B00929744 /* NFMenuTableViewCell.m */,
+			);
+			path = NFMenu;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,7 +303,7 @@
 				TargetAttributes = {
 					FB1C6A191EA5E2F800EEA4C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = FMH449VCFF;
+						DevelopmentTeam = XR62VH56F6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -245,7 +331,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB207F831EA7392600929744 /* nf_nav_rightMenu@3x.png in Resources */,
+				FB207F691EA70A9C00929744 /* nf_nav_leftback@3x.png in Resources */,
+				FB207F841EA7392600929744 /* nf_nav_rightMenu@2x.png in Resources */,
 				FB1C6A2D1EA5E2F800EEA4C7 /* LaunchScreen.storyboard in Resources */,
+				FB89A92C1EA75EF1002813BD /* nf_menu_declare1@2x.png in Resources */,
+				FB89A92D1EA75EF1002813BD /* nf_menu_declare3@2x.png in Resources */,
+				FB207F6A1EA70A9C00929744 /* nf_nav_leftback@2x.png in Resources */,
+				FB89A9381EA764C4002813BD /* nf_menu_support@2x.png in Resources */,
+				FB89A93A1EA764C8002813BD /* nf_menu_support@3x.png in Resources */,
+				FB89A92B1EA75EF1002813BD /* nf_menu_declare@2x.png in Resources */,
 				FB1C6A2A1EA5E2F800EEA4C7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,14 +400,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB207F5F1EA7043800929744 /* NFCollectViewController.m in Sources */,
+				FB207FB11EA7427B00929744 /* NFMenuViewController.m in Sources */,
 				FB0510C21EA5FAAC000E756F /* NFTypeViewController.m in Sources */,
 				FBDA262B1EA64C7400FDA2A9 /* NFTypeTableViewCell.m in Sources */,
 				FB0510CB1EA60605000E756F /* NFCollectionViewCell.m in Sources */,
 				FB1C6A3D1EA5E4A500EEA4C7 /* NFBaseViewController.m in Sources */,
 				FB1C6A221EA5E2F800EEA4C7 /* AppDelegate.m in Sources */,
-				FB0510C51EA5FAD1000E756F /* NFCollectViewController.m in Sources */,
+				FB207F5C1EA7017700929744 /* NFWebViewController.m in Sources */,
 				FB0510AA1EA5EF1B000E756F /* NFMainViewController.m in Sources */,
 				FB0510BF1EA5FA67000E756F /* NFRecommendViewController.m in Sources */,
+				FB207FAE1EA7427B00929744 /* NFDisclaimerVC.m in Sources */,
+				FB207FAF1EA7427B00929744 /* NFMenuHeaderView.m in Sources */,
+				FB207FBC1EA743E100929744 /* NFOnlineManager.m in Sources */,
+				FB207FB01EA7427B00929744 /* NFMenuTableViewCell.m in Sources */,
+				FB207F6E1EA70C6900929744 /* NFHudManager.m in Sources */,
 				FB0510BC1EA5F9B5000E756F /* NFNetManger.m in Sources */,
 				FB1C6A371EA5E3C700EEA4C7 /* NFBaseNavigationController.m in Sources */,
 				FB0510BB1EA5F9B5000E756F /* NFBaseModel.m in Sources */,
@@ -430,12 +532,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = FMH449VCFF;
+				DEVELOPMENT_TEAM = XR62VH56F6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NiceFood/NFConfig/PrefixHeader_NF.pch";
 				INFOPLIST_FILE = NiceFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFoode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -446,12 +548,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = FMH449VCFF;
+				DEVELOPMENT_TEAM = XR62VH56F6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NiceFood/NFConfig/PrefixHeader_NF.pch";
 				INFOPLIST_FILE = NiceFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFoode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

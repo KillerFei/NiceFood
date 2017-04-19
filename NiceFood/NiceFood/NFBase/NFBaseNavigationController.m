@@ -14,7 +14,7 @@
 {
     [super viewDidLoad];
     
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor] , NSFontAttributeName:DT_Nav_TitleFont}];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor] , NSFontAttributeName:NF_Nav_TitleFont}];
     [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"dt_nav_bg"] stretchableImageWithLeftCapWidth:3 topCapHeight:3]  forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
 }

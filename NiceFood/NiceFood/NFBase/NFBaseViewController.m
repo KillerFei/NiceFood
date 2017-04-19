@@ -32,8 +32,8 @@
 - (void)setLeftBackNavItem
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, 20, 30);
-    [btn setImage:[UIImage imageNamed:@"dt_nav_leftback"] forState:UIControlStateNormal];
+    btn.frame = CGRectMake(0, 0, 30, 30);
+    [btn setImage:[UIImage imageNamed:@"nf_nav_leftback"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(doBack) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
 }

@@ -14,6 +14,8 @@
 #import "NFNetManger.h"
 #import "NFBaseModel.h"
 #import "NetAPI_NF.h"
+#import "NFHudManager.h"
+#import "NFOnlineManager.h"
 //------------------- 三方 -------------
 #import "FMDB.h"
 #import "Masonry.h"

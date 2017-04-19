@@ -9,7 +9,7 @@
 #ifndef Config_NF_h
 #define Config_NF_h
 
-#define kAppName                  @"斗图王"
+#define kAppName                  @"美食家"
 #define kAppUrl                   @""
 
 // key
@@ -26,26 +26,6 @@
 #define BOLD_FONT(F)               [UIFont boldSystemFontOfSize:F]
 
 #define NF_Base_Space              10.f
-#define DT_Base_Scale              KSCREEN_WIDTH/375.f
-//基本UI
-#define DT_TabBar_SeleteColor      RGB(255, 204, 0)
-
-//#define DT_Nav_TitleColor          RGB(112, 112, 112)
-#define DT_Nav_TitleColor          [UIColor blackColor]
-
-#define DT_Nav_TitleFont           BOLD_FONT(16)
-
-//#define DT_Base_TitleColor         RGB(112, 112, 112)
-//#define DT_Base_TitleColor         RGB(79, 79, 79)
-#define DT_Base_TitleColor         RGB(106, 106, 106)
-#define DT_Base_TitleFont          SYSTEM_FONT(15)
-
-#define DT_Base_ContentColor       RGB(149, 149, 149)
-#define DT_Base_ContentFont        SYSTEM_FONT(13)
-
-#define DT_Base_LineColor          RGB(225, 225, 225)
-#define DT_Base_EdgeColor          RGB(255, 204, 0)
-#define DT_Base_GrayEdgeColor      RGB(179, 179, 179)
 
 #define NF_Nav_TitleColor          [UIColor blackColor]
 #define NF_Nav_TitleFont           SYSTEM_FONT(15)

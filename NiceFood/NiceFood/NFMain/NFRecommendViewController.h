@@ -10,4 +10,6 @@
 
 @interface NFRecommendViewController : NFBaseViewController
 
+@property (nonatomic, strong) NSString *mainId;
+
 @end

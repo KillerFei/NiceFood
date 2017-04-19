@@ -25,12 +25,12 @@
                             @"version":@"2.1.1"};
     return param;
 }
-+ (void)getRecommendFoodsWithPage:(NSInteger)page
-                         callBack:(callBack)callBack
++ (void)getFoodsWithParam:(NSDictionary *)param
+                 callBack:(callBack)callBack;
 {
-    NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithDictionary:[NFNetManger commonParameter]];
-    [param setObject:@(page) forKey:@"page"];
-    [HYBNetworking getWithUrl:kNFRecommendListUrl refreshCache:YES params:param success:^(id response) {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:[NFNetManger commonParameter]];
+    [params setValuesForKeysWithDictionary:param];
+    [HYBNetworking getWithUrl:kNFRecommendListUrl refreshCache:YES params:params success:^(id response) {
         
         NSString *result = [(NSDictionary *)response objectForKey:@"result"];
         if ([result isEqualToString:@"ok"]) {

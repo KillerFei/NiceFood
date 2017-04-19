@@ -10,6 +10,7 @@
 #import "NFRecommendViewController.h"
 #import "NFTypeViewController.h"
 #import "NFCollectViewController.h"
+#import "NFMenuViewController.h"
 
 @interface NFMainViewController ()<UIScrollViewDelegate>
 
@@ -30,6 +31,7 @@
     [super viewDidLoad];
     [self setUpChildVC];
     [self setUpTitleView];
+    [self setUpRightNavItem];
 }
 #pragma mark - setUpChildVC
 - (void)setUpChildVC
@@ -60,7 +62,7 @@
 #pragma mark - setUpTitleView
 - (void)setUpTitleView
 {
-    CGFloat width = KSCREEN_WIDTH-140;
+    CGFloat width = KSCREEN_WIDTH-160;
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 44)];
     for (int i = 0; i < 3; i++) {
         
@@ -88,6 +90,23 @@
         [titleView addSubview:btn];
     }
     self.navigationItem.titleView = titleView;
+}
+#pragma mark - setUpRightNav
+- (void)setUpRightNavItem
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 50, 44);
+    [btn setImage:[UIImage imageNamed:@"nf_nav_rightMenu"] forState:UIControlStateNormal];
+    btn.imageEdgeInsets = UIEdgeInsetsMake(0, 16, 0, -16);
+    [btn addTarget:self action:@selector(rightMenuAction) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+#pragma mark - rightMenuAction
+- (void)rightMenuAction
+{
+    NFMenuViewController *menuVC = [[NFMenuViewController alloc] init];
+    menuVC.navTitle = @"更多";
+    [self.navigationController pushViewController:menuVC animated:YES];
 }
 #pragma mark - btnAction
 - (void)btnAction:(UIButton *)sender

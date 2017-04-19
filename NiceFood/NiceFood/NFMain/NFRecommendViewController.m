@@ -7,12 +7,15 @@
 //
 
 #import "NFRecommendViewController.h"
+#import "NFWebViewController.h"
 #import "NFCollectionViewCell.h"
 
 @interface NFRecommendViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *myView;
 @property (nonatomic, strong) NSMutableArray   *reFoods;
+@property (nonatomic, assign) NSInteger        page;
+@property (nonatomic, assign) BOOL             firstLoad;
 @end
 
 @implementation NFRecommendViewController
@@ -27,7 +30,11 @@
         layOut.minimumLineSpacing = NF_Base_Space;
         layOut.minimumInteritemSpacing = NF_Base_Space;
         layOut.sectionInset = UIEdgeInsetsMake(NF_Base_Space, NF_Base_Space, NF_Base_Space, NF_Base_Space);
-        _myView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-64) collectionViewLayout:layOut];
+        if (kStringIsEmpty(_mainId)) {
+            _myView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-64) collectionViewLayout:layOut];
+        } else {
+            _myView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, KSCREEN_WIDTH, KSCREEN_HEIGHT-64) collectionViewLayout:layOut];
+        }
         _myView.backgroundColor = NF_Base_BgGrayColor;
         [_myView registerClass:[NFCollectionViewCell class] forCellWithReuseIdentifier:@"cellId"];
         _myView.delegate = self;
@@ -44,17 +51,75 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpTabView];
+    [self requestData];
+}
+#pragma mark - setUpTabView
+- (void)setUpTabView
+{
+    _page = 1;
     [self.view addSubview:self.myView];
+    if (!kStringIsEmpty(_mainId)) {
+        [self setLeftBackNavItem];
+    }
+    [self addRefreshHeader];
+}
+#pragma mark - Refresh and LoadMore
+- (void)addRefreshHeader
+{
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    _myView.mj_header = header;
+}
+- (void)addLoadMoreFooter
+{
+    if (!_firstLoad) {
+       
+        MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+        _myView.mj_footer = footer;
+        _firstLoad = YES;
+    }
+}
+#pragma mark - loadNew
+- (void)loadNewData
+{
+    _page = 1;
+    [self requestData];
+}
+#pragma mark - loadMoreData
+- (void)loadMoreData
+{
+    _page++;
     [self requestData];
 }
 #pragma mark - requestData
 - (void)requestData
 {
-    [NFNetManger getRecommendFoodsWithPage:1 callBack:^(NSError *error, NSArray *foods) {
-       
+    NSDictionary *param = nil;
+    if (!kStringIsEmpty(_mainId)) {
+        param = @{@"page":@(_page), @"mainId":_mainId};
+    } else {
+        param = @{@"page":@(_page)};
+    }
+    [NFHudManager showHudInView:self.view];
+    [NFNetManger getFoodsWithParam:param callBack:^(NSError *error, NSArray *foods) {
+        
+        [NFHudManager hideHudInView:self.view];
+        [self.myView.mj_header endRefreshing];
+        [self.myView.mj_footer endRefreshing];
         if (!kArrayIsEmpty(foods)) {
+            
+            if (_page == 1) {
+                [self.reFoods removeAllObjects];
+            }
             [self.reFoods addObjectsFromArray:foods];
             [self.myView reloadData];
+            [self addLoadMoreFooter];
+            
+        } else {
+            if (kArrayIsEmpty(self.reFoods)) {
+                [NFHudManager showMessage:@"网络错误" InView:self.view];
+            }
+            [self.myView.mj_footer endRefreshingWithNoMoreData];
         }
     }];
 }
@@ -71,14 +136,24 @@
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NFCollectionViewCell *rCell = (NFCollectionViewCell *)cell;
-    
     [rCell configModel:self.reFoods[indexPath.item]];
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    NFBaseModel *baseModel = self.reFoods[indexPath.item];
+    NFWebViewController *webVC = [[NFWebViewController alloc] init];
+    webVC.navTitle = baseModel.title;
+    if (kStringIsEmpty(_mainId)) {
+       webVC.mainId   = @"19";
+    } else {
+        webVC.mainId   = baseModel.mainId;
+    }
+    webVC.fid = baseModel.fid;
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
 }
-
-
 @end

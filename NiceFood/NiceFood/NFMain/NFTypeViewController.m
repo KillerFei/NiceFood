@@ -7,6 +7,7 @@
 //
 
 #import "NFTypeViewController.h"
+#import "NFRecommendViewController.h"
 #import "NFTypeTableViewCell.h"
 
 @interface NFTypeViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -63,12 +64,16 @@
 #pragma mark - requestData
 - (void)requestData
 {
+    [NFHudManager showHudInView:self.view];
     [NFNetManger getTypesFoodsWithCallBack:^(NSError *error, NSArray *foods) {
        
+        [NFHudManager hideHudInView:self.view];
         if (!kArrayIsEmpty(foods)) {
             [self.dataArr removeAllObjects];
             [self.dataArr addObjectsFromArray:foods];
             [self.myTab reloadData];
+        } else {
+            [NFHudManager showMessage:@"网络错误" InView:self.view];
         }
     }];
 }
@@ -80,10 +85,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NFTypeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellId"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [(NFTypeTableViewCell *)cell configModel:self.dataArr[indexPath.row]];
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NFRecommendViewController *reVC = [[NFRecommendViewController alloc] init];
+    NFBaseModel *baseModel = self.dataArr[indexPath.row];
+    if (kStringIsEmpty(baseModel.mainId)) return;
+    reVC.mainId   = baseModel.mainId;
+    reVC.navTitle = baseModel.title;
+    [self.navigationController pushViewController:reVC animated:YES];
 }
 @end

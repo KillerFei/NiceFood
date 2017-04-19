@@ -13,9 +13,10 @@ typedef void(^callBack)(NSError *error ,NSArray *foods);
 
 @interface NFNetManger : NSObject
 
-+ (void)getRecommendFoodsWithPage:(NSInteger)page
-                        callBack:(callBack)callBack;
++ (void)getFoodsWithParam:(NSDictionary *)param
+                 callBack:(callBack)callBack;
 
 + (void)getTypesFoodsWithCallBack:(callBack)callBack;
+
 
 @end
