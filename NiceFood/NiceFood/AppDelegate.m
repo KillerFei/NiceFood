@@ -12,6 +12,7 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, strong) UIImageView *launchView;
 @end
 @implementation AppDelegate
 
@@ -20,7 +21,48 @@
     
     [self setUpBaseNetwork];
     [self setUpKeyWindow];
+    [self setUpLaunchView];
     return YES;
+}
+#pragma mark - setUpLaunchAnim
+- (void)setUpLaunchView
+{
+    CGSize viewSize = [UIScreen mainScreen].bounds.size;
+    NSString *viewOrientation = @"Portrait";
+    NSString *launchImage = nil;
+    NSArray* imagesDict = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    for (NSDictionary* dict in imagesDict)
+    {
+        CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
+        if (CGSizeEqualToSize(imageSize, viewSize) && [viewOrientation isEqualToString:dict[@"UILaunchImageOrientation"]])
+        {
+            launchImage = dict[@"UILaunchImageName"];
+        }
+    }
+    _launchView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:launchImage]];
+    _launchView.frame = [UIScreen mainScreen].bounds;
+    _launchView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    CGFloat topHeight = KSCREEN_WIDTH*45/32.f;
+    UIImageView *topView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nf_launch_top.jpg"]];
+    topView.frame = CGRectMake(0, 0, KSCREEN_WIDTH, topHeight);
+    topView.contentMode = UIViewContentModeScaleAspectFill;
+    [_launchView addSubview:topView];
+    [[UIApplication sharedApplication].keyWindow addSubview:_launchView];
+}
+- (void)removeLaunchView
+{
+    [UIView animateWithDuration:1.0f
+                          delay:0.5f
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         _launchView.alpha = 0.0f;
+                         _launchView.layer.transform = CATransform3DScale(CATransform3DIdentity, 1.2, 1.2, 1);
+                     }
+                     completion:^(BOOL finished) {
+                         [_launchView removeFromSuperview];
+                         _launchView = nil;
+                     }];
 }
 #pragma mark - setUpBaseNetwork
 - (void)setUpBaseNetwork
@@ -38,6 +80,7 @@
 }
 - (void)setUpKeyWindow
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeLaunchView) name:kNFRemoveLaunchViewNoti object:nil];
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     NFMainViewController *rootVC = [[NFMainViewController alloc] init];
     NFBaseNavigationController *nav = [[NFBaseNavigationController alloc] initWithRootViewController:rootVC];

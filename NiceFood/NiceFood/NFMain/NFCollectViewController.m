@@ -12,13 +12,12 @@
 
 @interface NFCollectViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, NFCollectionViewCellDelegate>
 {
-    BOOL deleteBtnFlag;
-    BOOL vibrateAniFlag;
+    BOOL _deleteFlag;
+    BOOL _firstLoad;
 }
 @property (nonatomic, strong) UICollectionView       *myView;
 @property (nonatomic, strong) NSMutableArray         *dataSource;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGes;
-@property (nonatomic, assign) BOOL                   firstLoad;
 @end
 
 @implementation NFCollectViewController
@@ -57,19 +56,24 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.dataSource removeAllObjects];
-    if (_firstLoad) {
-        [self.myView reloadData];
-    }
-    _firstLoad = YES;
+    [NFDBManager runBlockInBackground:^{
+        [self.dataSource removeAllObjects];
+        [self.dataSource addObjectsFromArray:[[NFDBManager shareInstance] getFoods]];
+         dispatch_async(dispatch_get_main_queue(), ^{
+             if (_firstLoad) {
+                 [self.myView reloadData];
+             }
+             _firstLoad = YES;
+         });
+    }];
 }
-#pragma mark - setUpFlag
+#pragma mark - 初始化标记
 - (void)setUpFlag
 {
-    deleteBtnFlag = YES;
-    vibrateAniFlag = YES;
+    _firstLoad  = NO;
+    _deleteFlag = NO;
 }
-#pragma mark - setUpTapGes
+#pragma mark - 配置手势
 - (void)setUpTapGes
 {
     _tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
@@ -78,17 +82,17 @@
 }
 - (void)tapAction
 {
-    [self hideAllDeleteBtn];
+    [self exitDeleteState];
 }
 #pragma mark - setUpTabView
 - (void)setUpTabView
 {
     [self.view addSubview:self.myView];
 }
-#pragma mark - collectionView DataSource
+#pragma mark - CollectionView
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [[[NFDBManager shareInstance] getFoods] count];
+    return self.dataSource.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -100,38 +104,36 @@
 {
     NFCollectionViewCell *collectCell = (NFCollectionViewCell *)cell;
     collectCell.delegate = self;
-    NSArray *foods = [[NFDBManager shareInstance] getFoods];
-    [collectCell configModel:foods[indexPath.item]];
-    [self setCellVibrate:(NFCollectionViewCell *)cell IndexPath:indexPath];
+    [collectCell setUpModel:self.dataSource[indexPath.item]];
+    [self setVisibleCell:(NFCollectionViewCell *)cell indexPath:indexPath];
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
-    if (!vibrateAniFlag) {
-        [self hideAllDeleteBtn];
+    if (_deleteFlag) {
+        [self exitDeleteState];
         return;
     }
-    NSArray *foods = [[NFDBManager shareInstance] getFoods];
-    NFBaseModel *baseModel = foods[indexPath.item];
+    NFBaseModel *baseModel = self.dataSource[indexPath.item];
     NFWebViewController *webVC = [[NFWebViewController alloc] init];
     webVC.navTitle = baseModel.title;
-    webVC.pageUrl = baseModel.page_url;
-    webVC.food    = baseModel;
+    webVC.pageUrl  = baseModel.page_url;
+    webVC.food     = baseModel;
     [self.navigationController pushViewController:webVC animated:YES];
 }
-
-- (void)setCellVibrate:(NFCollectionViewCell *)cell IndexPath:(NSIndexPath *)indexPath{
-    
+#pragma mark -  添加动画
+- (void)setVisibleCell:(NFCollectionViewCell *)cell
+                indexPath:(NSIndexPath *)indexPath
+{
+    cell.delegate  = self;
     cell.indexPath = indexPath;
-    cell.deleteBtn.hidden = deleteBtnFlag?YES:NO;
-    if (!vibrateAniFlag) {
+    cell.deleteBtn.hidden = _deleteFlag?NO:YES;
+    if (_deleteFlag) {
         [self addAnimationForCell:cell];
     }else{
         [cell.layer removeAnimationForKey:@"shake"];
     }
-    cell.delegate = self;
 }
-#pragma mark - addAnimationForCell 添加动画
 - (void)addAnimationForCell:(NFCollectionViewCell *)cell
 {
     CAKeyframeAnimation *rvibrateAni = [CAKeyframeAnimation animation];
@@ -141,34 +143,39 @@
     rvibrateAni.repeatCount = MAXFLOAT;
     [cell.layer addAnimation:rvibrateAni forKey:@"shake"];
 }
-- (void)hideAllDeleteBtn{
-    if (!deleteBtnFlag) {
-        deleteBtnFlag = YES;
-        vibrateAniFlag = YES;
-        _tapGes.enabled = NO;
-        [self.myView reloadData];
-    }
+#pragma mark - 退出删除模式
+- (void)exitDeleteState
+{
+    _deleteFlag = NO;
+    _tapGes.enabled = NO;
+    [self.myView reloadData];
 }
-- (void)showAllDeleteBtn{
-    deleteBtnFlag = NO;
-    vibrateAniFlag = NO;
+#pragma mark - 进入删除模式
+- (void)beginDeleteState
+{
+    _deleteFlag = YES;
     _tapGes.enabled = YES;
     [self.myView reloadData];
 }
+#pragma mark - 删除菜谱
 - (void)deleteFood:(NFBaseModel *)food
        atIndexpath:(NSIndexPath *)indexPath
 {
-    
-    [self.myView performBatchUpdates:^{
-        
+    [NFDBManager runBlockInBackground:^{
         [[NFDBManager shareInstance] deleteFood:food];
+    }];
+    [self.myView performBatchUpdates:^{
+        [self.dataSource removeObject:food];
         [self.myView deleteItemsAtIndexPaths:@[indexPath]];
     } completion:^(BOOL finished) {
+        if (self.dataSource.count == 0) {
+            _deleteFlag = NO;
+            _tapGes.enabled = NO;
+        }
         [self.myView reloadData];
     }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 @end

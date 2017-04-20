@@ -53,11 +53,10 @@
 - (UIButton *)deleteBtn
 {
     if (!_deleteBtn) {
-        
         _deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _deleteBtn.hidden = YES;
         [_deleteBtn setImage:[UIImage imageNamed:@"删除 (8)"] forState:UIControlStateNormal];
-        [_deleteBtn addTarget:self action:@selector(setAnimationType) forControlEvents:UIControlEventTouchUpInside];
+        [_deleteBtn addTarget:self action:@selector(deleteAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _deleteBtn;
 }
@@ -83,7 +82,6 @@
         make.top.left.right.equalTo(self.contentView);
         make.height.mas_equalTo(@(CGRectGetHeight(self.contentView.frame)-60));
     }];
-    
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(_imgView.mas_bottom);
@@ -115,14 +113,23 @@
         make.size.mas_equalTo(CGSizeMake(35, 35));
     }];
 }
-- (void)configModel:(NFBaseModel *)model
+#pragma mark - 配置数据
+- (void)setUpModel:(NFBaseModel *)model;
 {
     _food = model;
-    [_imgView sd_setImageWithURL:[NSURL URLWithString:model.img_url]];
+    [_imgView sd_setImageWithURL:[NSURL safeURLWithString:model.img_url]];
     _titleLabel.text = model.title;
     _desLabel.text = model.descrip;
 }
-#pragma mark - LongGes
+- (void)prepareForReuse
+{ 
+    [super prepareForReuse];
+    _food            = nil;
+    _desLabel.text   = nil;
+    _imgView.image   = nil;
+    _titleLabel.text = nil;
+}
+#pragma mark - 长按删除状态
 - (void)setUpLongGes
 {
     UILongPressGestureRecognizer *longGes = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longGesAction:)];
@@ -131,14 +138,17 @@
 - (void)longGesAction:(UILongPressGestureRecognizer *)ges
 {
     if(ges.state == UIGestureRecognizerStateBegan) {
-        if (_delegate && [_delegate respondsToSelector:@selector(showAllDeleteBtn)]) {
-            [_delegate showAllDeleteBtn];
+        if (_delegate && [_delegate respondsToSelector:@selector(beginDeleteState)]) {
+            [_delegate beginDeleteState];
         }
     }
 }
-#pragma mark - setAnimationType
-- (void)setAnimationType
+#pragma mark - 删除动作
+- (void)deleteAction
 {
+    if (kObjectIsEmpty(_food) || kObjectIsEmpty(_indexPath)) {
+        return;
+    }
     if (_delegate && [_delegate respondsToSelector:@selector(deleteFood:atIndexpath:)]) {
         [_delegate deleteFood:_food atIndexpath:_indexPath];
     }

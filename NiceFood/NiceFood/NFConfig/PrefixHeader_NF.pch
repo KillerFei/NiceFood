@@ -17,6 +17,7 @@
 #import "NFHudManager.h"
 #import "NFOnlineManager.h"
 #import "NFDBManager.h"
+#import "NSURL+NF_Ex.h"
 //------------------- 三方 -------------
 #import "FMDB.h"
 #import "Masonry.h"

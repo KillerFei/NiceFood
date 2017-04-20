@@ -14,7 +14,8 @@
 
 // key
 #define kDTLastVersionKey         @"lastVersion"
-#define KDTVersionCommentKey      @"versionCommentKey"
+#define kNFVersionCommentKey      @"versionCommentKey"
+#define kNFRemoveLaunchViewNoti   @"removeLaunchViewNoti"
 
 //----------------------UI类--------------------------
 //RGB颜色

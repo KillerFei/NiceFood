@@ -11,21 +11,17 @@
 
 @protocol NFCollectionViewCellDelegate <NSObject>
 
--(void)deleteFood:(NFBaseModel *)food
-      atIndexpath:(NSIndexPath *)indexPath;
-
--(void)showAllDeleteBtn;
--(void)hideAllDeleteBtn;
+- (void)beginDeleteState;
+- (void)deleteFood:(NFBaseModel *)food
+       atIndexpath:(NSIndexPath *)indexPath;
 @end
 
 @interface NFCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic,strong) UIButton *deleteBtn;
-@property (nonatomic,strong) NSIndexPath *indexPath;
+@property (nonatomic, strong) UIButton    *deleteBtn;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 @property (nonatomic, assign) id<NFCollectionViewCellDelegate>delegate;
 
-- (void)configModel:(NFBaseModel *)model;
-
 - (void)setUpLongGes;
-
+- (void)setUpModel:(NFBaseModel *)model;
 @end

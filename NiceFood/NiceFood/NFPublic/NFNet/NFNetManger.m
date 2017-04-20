@@ -43,6 +43,9 @@
             NSMutableArray *foots = [[NSMutableArray alloc] init];
             for (NSDictionary *foot in recipes) {
                 NFBaseModel *model = [NFBaseModel mj_objectWithKeyValues:foot];
+                if (kStringIsEmpty(model.page_url)) {
+                    continue;
+                }
                 [foots addObject:model];
             }
             if (callBack) {
@@ -71,6 +74,9 @@
             NSMutableArray *types = [[NSMutableArray alloc] init];
             for (NSDictionary *type in data) {
                 NFBaseModel *model = [NFBaseModel mj_objectWithKeyValues:type];
+                if (kStringIsEmpty(model.mainId)) {
+                    continue;
+                }
                 [types addObject:model];
             }
             if (callBack) {

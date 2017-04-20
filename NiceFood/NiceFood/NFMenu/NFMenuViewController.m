@@ -173,7 +173,7 @@ static NSString *const kNFMenuCellIdentifier = @"myCellIdentifier";
     NSURL *commentUrl = [NSURL URLWithString:kAppUrl];
     [[UIApplication sharedApplication] openURL:commentUrl];
     NSString *version = [NFOnlineManager currentVerson];
-    [[NSUserDefaults standardUserDefaults] setObject:version forKey:KDTVersionCommentKey];
+    [[NSUserDefaults standardUserDefaults] setObject:version forKey:kNFVersionCommentKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

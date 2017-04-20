@@ -53,55 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpTabView];
-    [self setUpLaunchView];
     [self requestData];
-}
-#pragma mark - setUpLaunchAnim
-- (void)setUpLaunchView
-{
-    if (!kStringIsEmpty(_mainId)) {
-        return;
-    }
-    CGSize viewSize = [UIScreen mainScreen].bounds.size;
-    NSString *viewOrientation = @"Portrait";
-    NSString *launchImage = nil;
-    NSArray* imagesDict = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
-    for (NSDictionary* dict in imagesDict)
-    {
-        CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
-        if (CGSizeEqualToSize(imageSize, viewSize) && [viewOrientation isEqualToString:dict[@"UILaunchImageOrientation"]])
-        {
-            launchImage = dict[@"UILaunchImageName"];
-        }
-    }
-    _launchView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:launchImage]];
-    _launchView.frame = [UIScreen mainScreen].bounds;
-    _launchView.contentMode = UIViewContentModeScaleAspectFill;
-    
-    CGFloat topHeight = KSCREEN_WIDTH*45/32.f;
-    UIImageView *topView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nf_launch_top.jpg"]];
-    topView.frame = CGRectMake(0, 0, KSCREEN_WIDTH, topHeight);
-    topView.contentMode = UIViewContentModeScaleAspectFill;
-    [_launchView addSubview:topView];
-    [[UIApplication sharedApplication].keyWindow addSubview:_launchView];
-
-}
-- (void)setUpLaunchAnim
-{
-    if (!_launchView) {
-        return;
-    }
-    [UIView animateWithDuration:1.0f
-                          delay:0.5f
-                        options:UIViewAnimationOptionBeginFromCurrentState
-                     animations:^{
-                         _launchView.alpha = 0.0f;
-                         _launchView.layer.transform = CATransform3DScale(CATransform3DIdentity, 1.2, 1.2, 1);
-                     }
-                     completion:^(BOOL finished) {
-                         [_launchView removeFromSuperview];
-                         _launchView = nil;
-                     }];
 }
 #pragma mark - setUpTabView
 - (void)setUpTabView
@@ -157,7 +109,9 @@
         if (!kStringIsEmpty(_mainId) && !_firstLoad ) {
             [NFHudManager hideHudInView:self.view];
         } else {
-            [self setUpLaunchAnim];
+            if (!_firstLoad) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNFRemoveLaunchViewNoti object:nil];
+            }
         }
         [self.myView.mj_header endRefreshing];
         [self.myView.mj_footer endRefreshing];
@@ -191,7 +145,7 @@
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NFCollectionViewCell *rCell = (NFCollectionViewCell *)cell;
-    [rCell configModel:self.reFoods[indexPath.item]];
+    [rCell setUpModel:self.reFoods[indexPath.item]];
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {

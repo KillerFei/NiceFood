@@ -12,8 +12,6 @@
 
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) NSArray   *colletFoods;
-@property (nonatomic, strong) UIButton  *collectBtn;
-
 @end
 
 @implementation NFWebViewController
@@ -37,14 +35,15 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+}
+- (void)refreshRightNavBtn:(UIButton *)btn
+{
     [NFDBManager runBlockInBackground:^{
         _colletFoods =  [[NFDBManager shareInstance] getFoods];
         dispatch_async(dispatch_get_main_queue(), ^{
-           
             for (NFBaseModel *food in _colletFoods) {
                 if ([food.page_url isEqualToString:_food.page_url]) {
-                    
-                    _collectBtn.userInteractionEnabled = NO;
+                    btn.selected = YES;
                     break;
                 }
             }
@@ -56,14 +55,25 @@
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 0, 30, 30);
-    [btn setImage:[UIImage imageNamed:@"nf_nav_leftback"] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(collectFood) forControlEvents:UIControlEventTouchUpInside];
+    [btn setImage:[UIImage imageNamed:@"nf_love_selete"] forState:UIControlStateSelected];
+    [btn setImage:[UIImage imageNamed:@"nf_love_normal"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(collectBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    [self refreshRightNavBtn:btn];
 }
 #pragma marl - collectFood
-- (void)collectFood
+- (void)collectBtnAction:(UIButton *)sender
 {
-    [[NFDBManager shareInstance] saveFood:_food];
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        [NFDBManager runBlockInBackground:^{
+            [[NFDBManager shareInstance] saveFood:_food];
+        }];
+    } else {
+        [NFDBManager runBlockInBackground:^{
+            [[NFDBManager shareInstance] deleteFood:_food];
+        }];
+    }
 }
 #pragma mark - setUpWebView
 - (void)setUpWebView

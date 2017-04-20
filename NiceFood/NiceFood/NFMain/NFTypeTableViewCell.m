@@ -64,9 +64,6 @@
 }
 - (void)configModel:(NFBaseModel *)model
 {
-    if (kStringIsEmpty(model.img_url)) {
-        return;
-    }
-    [_imgView sd_setImageWithURL:[NSURL URLWithString:model.img_url]];
+    [_imgView sd_setImageWithURL:[NSURL safeURLWithString:model.img_url]];
 }
 @end
