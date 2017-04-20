@@ -9,27 +9,37 @@
 /* Begin PBXBuildFile section */
 		77CA8A95FD0ED17D77F2B4A6 /* libPods-NiceFood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB034A09B3392972C09469A6 /* libPods-NiceFood.a */; };
 		FB0510AA1EA5EF1B000E756F /* NFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510A91EA5EF1B000E756F /* NFMainViewController.m */; };
-		FB0510BB1EA5F9B5000E756F /* NFBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510B81EA5F9B5000E756F /* NFBaseModel.m */; };
-		FB0510BC1EA5F9B5000E756F /* NFNetManger.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510BA1EA5F9B5000E756F /* NFNetManger.m */; };
 		FB0510BF1EA5FA67000E756F /* NFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510BE1EA5FA67000E756F /* NFRecommendViewController.m */; };
 		FB0510C21EA5FAAC000E756F /* NFTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510C11EA5FAAC000E756F /* NFTypeViewController.m */; };
 		FB0510CB1EA60605000E756F /* NFCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0510CA1EA60605000E756F /* NFCollectionViewCell.m */; };
 		FB1C6A1F1EA5E2F800EEA4C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A1E1EA5E2F800EEA4C7 /* main.m */; };
 		FB1C6A221EA5E2F800EEA4C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A211EA5E2F800EEA4C7 /* AppDelegate.m */; };
 		FB1C6A2A1EA5E2F800EEA4C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1C6A291EA5E2F800EEA4C7 /* Assets.xcassets */; };
-		FB1C6A2D1EA5E2F800EEA4C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1C6A2B1EA5E2F800EEA4C7 /* LaunchScreen.storyboard */; };
 		FB1C6A371EA5E3C700EEA4C7 /* NFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A361EA5E3C700EEA4C7 /* NFBaseNavigationController.m */; };
 		FB1C6A3D1EA5E4A500EEA4C7 /* NFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C6A3C1EA5E4A500EEA4C7 /* NFBaseViewController.m */; };
 		FB207F5C1EA7017700929744 /* NFWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207F5B1EA7017700929744 /* NFWebViewController.m */; };
 		FB207F5F1EA7043800929744 /* NFCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207F5E1EA7043800929744 /* NFCollectViewController.m */; };
 		FB207F691EA70A9C00929744 /* nf_nav_leftback@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB207F671EA70A9C00929744 /* nf_nav_leftback@3x.png */; };
 		FB207F6A1EA70A9C00929744 /* nf_nav_leftback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB207F681EA70A9C00929744 /* nf_nav_leftback@2x.png */; };
-		FB207F6E1EA70C6900929744 /* NFHudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207F6D1EA70C6900929744 /* NFHudManager.m */; };
 		FB207FAE1EA7427B00929744 /* NFDisclaimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207FA71EA7427B00929744 /* NFDisclaimerVC.m */; };
 		FB207FAF1EA7427B00929744 /* NFMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207FA91EA7427B00929744 /* NFMenuHeaderView.m */; };
 		FB207FB01EA7427B00929744 /* NFMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207FAB1EA7427B00929744 /* NFMenuTableViewCell.m */; };
 		FB207FB11EA7427B00929744 /* NFMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207FAD1EA7427B00929744 /* NFMenuViewController.m */; };
-		FB207FBC1EA743E100929744 /* NFOnlineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB207FBB1EA743E100929744 /* NFOnlineManager.m */; };
+		FB48D2CA1EA84EEC00A7DE63 /* NFDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB48D2C91EA84EEC00A7DE63 /* NFDBManager.m */; };
+		FB48D2D31EA8555000A7DE63 /* NFBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB48D2CE1EA8555000A7DE63 /* NFBaseModel.m */; };
+		FB48D2D41EA8555000A7DE63 /* NFNetManger.m in Sources */ = {isa = PBXBuildFile; fileRef = FB48D2D01EA8555000A7DE63 /* NFNetManger.m */; };
+		FB48D2D51EA8555000A7DE63 /* NFOnlineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB48D2D21EA8555000A7DE63 /* NFOnlineManager.m */; };
+		FB48D2D91EA8557E00A7DE63 /* NFHudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB48D2D81EA8557E00A7DE63 /* NFHudManager.m */; };
+		FB48D2F01EA87F0A00A7DE63 /* 删除 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = FB48D2E71EA87F0A00A7DE63 /* 删除 (1).png */; };
+		FB48D2F11EA87F0A00A7DE63 /* 删除 (2).png in Resources */ = {isa = PBXBuildFile; fileRef = FB48D2E81EA87F0A00A7DE63 /* 删除 (2).png */; };
+		FB48D2F21EA87F0A00A7DE63 /* 删除 (3).png in Resources */ = {isa = PBXBuildFile; fileRef = FB48D2E91EA87F0A00A7DE63 /* 删除 (3).png */; };
+		FB48D2F31EA87F0A00A7DE63 /* 删除 (4).png in Resources */ = {isa = PBXBuildFile; fileRef = FB48D2EA1EA87F0A00A7DE63 /* 删除 (4).png */; };
+		FB48D2F41EA87F0A00A7DE63 /* 删除 (5).png in Resources */ = {isa = PBXBuildFile; fileRef = FB48D2EB1EA87F0A00A7DE63 /* 删除 (5).png */; };
+		FB48D2F51EA87F0A00A7DE63 /* 删除 (6).png in Resources */ = {isa = PBXBuildFile; fileRef = FB48D2EC1EA87F0A00A7DE63 /* 删除 (6).png */; };
+		FB48D2F61EA87F0A00A7DE63 /* 删除 (7).png in Resources */ = {isa = PBXBuildFile; fileRef = FB48D2ED1EA87F0A00A7DE63 /* 删除 (7).png */; };
+		FB48D2F71EA87F0A00A7DE63 /* 删除 (8).png in Resources */ = {isa = PBXBuildFile; fileRef = FB48D2EE1EA87F0A00A7DE63 /* 删除 (8).png */; };
+		FB48D2F81EA87F0A00A7DE63 /* 删除.png in Resources */ = {isa = PBXBuildFile; fileRef = FB48D2EF1EA87F0A00A7DE63 /* 删除.png */; };
+		FB48D2FA1EA89C6C00A7DE63 /* nf_launch_top.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB48D2F91EA89C6C00A7DE63 /* nf_launch_top.jpg */; };
 		FBDA262B1EA64C7400FDA2A9 /* NFTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDA262A1EA64C7400FDA2A9 /* NFTypeTableViewCell.m */; };
 		FBE5A5CA1EA7779D002ABF8A /* nf_menu_support@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBE5A5C81EA7779D002ABF8A /* nf_menu_support@2x.png */; };
 		FBE5A5CB1EA7779D002ABF8A /* nf_menu_support@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBE5A5C91EA7779D002ABF8A /* nf_menu_support@3x.png */; };
@@ -47,11 +57,6 @@
 		EBAC448062A86C636BA6907B /* Pods-NiceFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceFood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiceFood/Pods-NiceFood.debug.xcconfig"; sourceTree = "<group>"; };
 		FB0510A81EA5EF1B000E756F /* NFMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFMainViewController.h; sourceTree = "<group>"; };
 		FB0510A91EA5EF1B000E756F /* NFMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFMainViewController.m; sourceTree = "<group>"; };
-		FB0510B61EA5F9B5000E756F /* NetAPI_NF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetAPI_NF.h; sourceTree = "<group>"; };
-		FB0510B71EA5F9B5000E756F /* NFBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFBaseModel.h; sourceTree = "<group>"; };
-		FB0510B81EA5F9B5000E756F /* NFBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBaseModel.m; sourceTree = "<group>"; };
-		FB0510B91EA5F9B5000E756F /* NFNetManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFNetManger.h; sourceTree = "<group>"; };
-		FB0510BA1EA5F9B5000E756F /* NFNetManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFNetManger.m; sourceTree = "<group>"; };
 		FB0510BD1EA5FA67000E756F /* NFRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFRecommendViewController.h; sourceTree = "<group>"; };
 		FB0510BE1EA5FA67000E756F /* NFRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFRecommendViewController.m; sourceTree = "<group>"; };
 		FB0510C01EA5FAAC000E756F /* NFTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFTypeViewController.h; sourceTree = "<group>"; };
@@ -63,7 +68,6 @@
 		FB1C6A201EA5E2F800EEA4C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FB1C6A211EA5E2F800EEA4C7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FB1C6A291EA5E2F800EEA4C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FB1C6A2C1EA5E2F800EEA4C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB1C6A2E1EA5E2F800EEA4C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB1C6A351EA5E3C700EEA4C7 /* NFBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFBaseNavigationController.h; sourceTree = "<group>"; };
 		FB1C6A361EA5E3C700EEA4C7 /* NFBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBaseNavigationController.m; sourceTree = "<group>"; };
@@ -77,8 +81,6 @@
 		FB207F5E1EA7043800929744 /* NFCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFCollectViewController.m; sourceTree = "<group>"; };
 		FB207F671EA70A9C00929744 /* nf_nav_leftback@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_nav_leftback@3x.png"; sourceTree = "<group>"; };
 		FB207F681EA70A9C00929744 /* nf_nav_leftback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_nav_leftback@2x.png"; sourceTree = "<group>"; };
-		FB207F6C1EA70C6900929744 /* NFHudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFHudManager.h; sourceTree = "<group>"; };
-		FB207F6D1EA70C6900929744 /* NFHudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFHudManager.m; sourceTree = "<group>"; };
 		FB207FA61EA7427B00929744 /* NFDisclaimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFDisclaimerVC.h; sourceTree = "<group>"; };
 		FB207FA71EA7427B00929744 /* NFDisclaimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFDisclaimerVC.m; sourceTree = "<group>"; };
 		FB207FA81EA7427B00929744 /* NFMenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFMenuHeaderView.h; sourceTree = "<group>"; };
@@ -87,8 +89,27 @@
 		FB207FAB1EA7427B00929744 /* NFMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFMenuTableViewCell.m; sourceTree = "<group>"; };
 		FB207FAC1EA7427B00929744 /* NFMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFMenuViewController.h; sourceTree = "<group>"; };
 		FB207FAD1EA7427B00929744 /* NFMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFMenuViewController.m; sourceTree = "<group>"; };
-		FB207FBA1EA743E100929744 /* NFOnlineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFOnlineManager.h; sourceTree = "<group>"; };
-		FB207FBB1EA743E100929744 /* NFOnlineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFOnlineManager.m; sourceTree = "<group>"; };
+		FB48D2C81EA84EEC00A7DE63 /* NFDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFDBManager.h; sourceTree = "<group>"; };
+		FB48D2C91EA84EEC00A7DE63 /* NFDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFDBManager.m; sourceTree = "<group>"; };
+		FB48D2CC1EA8555000A7DE63 /* NetAPI_NF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetAPI_NF.h; sourceTree = "<group>"; };
+		FB48D2CD1EA8555000A7DE63 /* NFBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFBaseModel.h; sourceTree = "<group>"; };
+		FB48D2CE1EA8555000A7DE63 /* NFBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBaseModel.m; sourceTree = "<group>"; };
+		FB48D2CF1EA8555000A7DE63 /* NFNetManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFNetManger.h; sourceTree = "<group>"; };
+		FB48D2D01EA8555000A7DE63 /* NFNetManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFNetManger.m; sourceTree = "<group>"; };
+		FB48D2D11EA8555000A7DE63 /* NFOnlineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFOnlineManager.h; sourceTree = "<group>"; };
+		FB48D2D21EA8555000A7DE63 /* NFOnlineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFOnlineManager.m; sourceTree = "<group>"; };
+		FB48D2D71EA8557E00A7DE63 /* NFHudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFHudManager.h; sourceTree = "<group>"; };
+		FB48D2D81EA8557E00A7DE63 /* NFHudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFHudManager.m; sourceTree = "<group>"; };
+		FB48D2E71EA87F0A00A7DE63 /* 删除 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除 (1).png"; sourceTree = "<group>"; };
+		FB48D2E81EA87F0A00A7DE63 /* 删除 (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除 (2).png"; sourceTree = "<group>"; };
+		FB48D2E91EA87F0A00A7DE63 /* 删除 (3).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除 (3).png"; sourceTree = "<group>"; };
+		FB48D2EA1EA87F0A00A7DE63 /* 删除 (4).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除 (4).png"; sourceTree = "<group>"; };
+		FB48D2EB1EA87F0A00A7DE63 /* 删除 (5).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除 (5).png"; sourceTree = "<group>"; };
+		FB48D2EC1EA87F0A00A7DE63 /* 删除 (6).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除 (6).png"; sourceTree = "<group>"; };
+		FB48D2ED1EA87F0A00A7DE63 /* 删除 (7).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除 (7).png"; sourceTree = "<group>"; };
+		FB48D2EE1EA87F0A00A7DE63 /* 删除 (8).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除 (8).png"; sourceTree = "<group>"; };
+		FB48D2EF1EA87F0A00A7DE63 /* 删除.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除.png"; sourceTree = "<group>"; };
+		FB48D2F91EA89C6C00A7DE63 /* nf_launch_top.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nf_launch_top.jpg; sourceTree = "<group>"; };
 		FBDA26291EA64C7400FDA2A9 /* NFTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFTypeTableViewCell.h; sourceTree = "<group>"; };
 		FBDA262A1EA64C7400FDA2A9 /* NFTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFTypeTableViewCell.m; sourceTree = "<group>"; };
 		FBE5A5C81EA7779D002ABF8A /* nf_menu_support@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_menu_support@2x.png"; sourceTree = "<group>"; };
@@ -151,20 +172,6 @@
 			path = NFMain;
 			sourceTree = "<group>";
 		};
-		FB0510B51EA5F9AE000E756F /* NFNet */ = {
-			isa = PBXGroup;
-			children = (
-				FB207FBA1EA743E100929744 /* NFOnlineManager.h */,
-				FB207FBB1EA743E100929744 /* NFOnlineManager.m */,
-				FB0510B61EA5F9B5000E756F /* NetAPI_NF.h */,
-				FB0510B71EA5F9B5000E756F /* NFBaseModel.h */,
-				FB0510B81EA5F9B5000E756F /* NFBaseModel.m */,
-				FB0510B91EA5F9B5000E756F /* NFNetManger.h */,
-				FB0510BA1EA5F9B5000E756F /* NFNetManger.m */,
-			);
-			path = NFNet;
-			sourceTree = "<group>";
-		};
 		FB1C6A111EA5E2F800EEA4C7 = {
 			isa = PBXGroup;
 			children = (
@@ -186,17 +193,13 @@
 		FB1C6A1C1EA5E2F800EEA4C7 /* NiceFood */ = {
 			isa = PBXGroup;
 			children = (
-				FB207FA51EA7426E00929744 /* NFMenu */,
-				FB207F6B1EA70C4F00929744 /* NFHud */,
 				FB207F601EA7059700929744 /* NFPic */,
-				FB0510B51EA5F9AE000E756F /* NFNet */,
+				FB48D2C51EA84E5A00A7DE63 /* NFPublic */,
+				FB207FA51EA7426E00929744 /* NFMenu */,
 				FB0510A71EA5EF03000E756F /* NFMain */,
 				FB1C6A381EA5E41000EEA4C7 /* NFConfig */,
 				FB1C6A341EA5E33300EEA4C7 /* NFBase */,
-				FB1C6A201EA5E2F800EEA4C7 /* AppDelegate.h */,
-				FB1C6A211EA5E2F800EEA4C7 /* AppDelegate.m */,
 				FB1C6A291EA5E2F800EEA4C7 /* Assets.xcassets */,
-				FB1C6A2B1EA5E2F800EEA4C7 /* LaunchScreen.storyboard */,
 				FB1C6A2E1EA5E2F800EEA4C7 /* Info.plist */,
 				FB1C6A1D1EA5E2F800EEA4C7 /* Supporting Files */,
 			);
@@ -206,6 +209,8 @@
 		FB1C6A1D1EA5E2F800EEA4C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FB1C6A201EA5E2F800EEA4C7 /* AppDelegate.h */,
+				FB1C6A211EA5E2F800EEA4C7 /* AppDelegate.m */,
 				FB1C6A1E1EA5E2F800EEA4C7 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -234,6 +239,16 @@
 		FB207F601EA7059700929744 /* NFPic */ = {
 			isa = PBXGroup;
 			children = (
+				FB48D2F91EA89C6C00A7DE63 /* nf_launch_top.jpg */,
+				FB48D2E71EA87F0A00A7DE63 /* 删除 (1).png */,
+				FB48D2E81EA87F0A00A7DE63 /* 删除 (2).png */,
+				FB48D2E91EA87F0A00A7DE63 /* 删除 (3).png */,
+				FB48D2EA1EA87F0A00A7DE63 /* 删除 (4).png */,
+				FB48D2EB1EA87F0A00A7DE63 /* 删除 (5).png */,
+				FB48D2EC1EA87F0A00A7DE63 /* 删除 (6).png */,
+				FB48D2ED1EA87F0A00A7DE63 /* 删除 (7).png */,
+				FB48D2EE1EA87F0A00A7DE63 /* 删除 (8).png */,
+				FB48D2EF1EA87F0A00A7DE63 /* 删除.png */,
 				FBE5A5D41EA77A10002ABF8A /* nf_nav_rightMenu@2x.png */,
 				FBE5A5D51EA77A10002ABF8A /* nf_nav_rightMenu@3x.png */,
 				FBE5A5EC1EA7A3B7002ABF8A /* nf_menu_clear@2x.png */,
@@ -246,15 +261,6 @@
 				FBE5A5D11EA778E1002ABF8A /* nf_menu_declare@3x.png */,
 			);
 			path = NFPic;
-			sourceTree = "<group>";
-		};
-		FB207F6B1EA70C4F00929744 /* NFHud */ = {
-			isa = PBXGroup;
-			children = (
-				FB207F6C1EA70C6900929744 /* NFHudManager.h */,
-				FB207F6D1EA70C6900929744 /* NFHudManager.m */,
-			);
-			path = NFHud;
 			sourceTree = "<group>";
 		};
 		FB207FA51EA7426E00929744 /* NFMenu */ = {
@@ -270,6 +276,48 @@
 				FB207FAB1EA7427B00929744 /* NFMenuTableViewCell.m */,
 			);
 			path = NFMenu;
+			sourceTree = "<group>";
+		};
+		FB48D2C51EA84E5A00A7DE63 /* NFPublic */ = {
+			isa = PBXGroup;
+			children = (
+				FB48D2D61EA8557E00A7DE63 /* NFHud */,
+				FB48D2CB1EA8555000A7DE63 /* NFNet */,
+				FB48D2C71EA84EC400A7DE63 /* NFDB */,
+			);
+			path = NFPublic;
+			sourceTree = "<group>";
+		};
+		FB48D2C71EA84EC400A7DE63 /* NFDB */ = {
+			isa = PBXGroup;
+			children = (
+				FB48D2C81EA84EEC00A7DE63 /* NFDBManager.h */,
+				FB48D2C91EA84EEC00A7DE63 /* NFDBManager.m */,
+			);
+			path = NFDB;
+			sourceTree = "<group>";
+		};
+		FB48D2CB1EA8555000A7DE63 /* NFNet */ = {
+			isa = PBXGroup;
+			children = (
+				FB48D2CC1EA8555000A7DE63 /* NetAPI_NF.h */,
+				FB48D2CD1EA8555000A7DE63 /* NFBaseModel.h */,
+				FB48D2CE1EA8555000A7DE63 /* NFBaseModel.m */,
+				FB48D2CF1EA8555000A7DE63 /* NFNetManger.h */,
+				FB48D2D01EA8555000A7DE63 /* NFNetManger.m */,
+				FB48D2D11EA8555000A7DE63 /* NFOnlineManager.h */,
+				FB48D2D21EA8555000A7DE63 /* NFOnlineManager.m */,
+			);
+			path = NFNet;
+			sourceTree = "<group>";
+		};
+		FB48D2D61EA8557E00A7DE63 /* NFHud */ = {
+			isa = PBXGroup;
+			children = (
+				FB48D2D71EA8557E00A7DE63 /* NFHudManager.h */,
+				FB48D2D81EA8557E00A7DE63 /* NFHudManager.m */,
+			);
+			path = NFHud;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +354,7 @@
 				TargetAttributes = {
 					FB1C6A191EA5E2F800EEA4C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = FMH449VCFF;
+						DevelopmentTeam = XR62VH56F6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -335,17 +383,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBE5A5EF1EA7A3B7002ABF8A /* nf_menu_clear@3x.png in Resources */,
+				FB48D2F41EA87F0A00A7DE63 /* 删除 (5).png in Resources */,
 				FBE5A5D21EA778E1002ABF8A /* nf_menu_declare@2x.png in Resources */,
 				FB207F691EA70A9C00929744 /* nf_nav_leftback@3x.png in Resources */,
 				FBE5A5D31EA778E1002ABF8A /* nf_menu_declare@3x.png in Resources */,
-				FB1C6A2D1EA5E2F800EEA4C7 /* LaunchScreen.storyboard in Resources */,
+				FB48D2F71EA87F0A00A7DE63 /* 删除 (8).png in Resources */,
 				FB207F6A1EA70A9C00929744 /* nf_nav_leftback@2x.png in Resources */,
+				FB48D2F31EA87F0A00A7DE63 /* 删除 (4).png in Resources */,
+				FB48D2F21EA87F0A00A7DE63 /* 删除 (3).png in Resources */,
 				FBE5A5D71EA77A10002ABF8A /* nf_nav_rightMenu@3x.png in Resources */,
 				FBE5A5D61EA77A10002ABF8A /* nf_nav_rightMenu@2x.png in Resources */,
 				FBE5A5CA1EA7779D002ABF8A /* nf_menu_support@2x.png in Resources */,
+				FB48D2F51EA87F0A00A7DE63 /* 删除 (6).png in Resources */,
 				FBE5A5EE1EA7A3B7002ABF8A /* nf_menu_clear@2x.png in Resources */,
 				FBE5A5CB1EA7779D002ABF8A /* nf_menu_support@3x.png in Resources */,
+				FB48D2FA1EA89C6C00A7DE63 /* nf_launch_top.jpg in Resources */,
+				FB48D2F61EA87F0A00A7DE63 /* 删除 (7).png in Resources */,
+				FB48D2F01EA87F0A00A7DE63 /* 删除 (1).png in Resources */,
+				FB48D2F11EA87F0A00A7DE63 /* 删除 (2).png in Resources */,
 				FB1C6A2A1EA5E2F800EEA4C7 /* Assets.xcassets in Resources */,
+				FB48D2F81EA87F0A00A7DE63 /* 删除.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB207F5F1EA7043800929744 /* NFCollectViewController.m in Sources */,
+				FB48D2D31EA8555000A7DE63 /* NFBaseModel.m in Sources */,
 				FB207FB11EA7427B00929744 /* NFMenuViewController.m in Sources */,
 				FB0510C21EA5FAAC000E756F /* NFTypeViewController.m in Sources */,
 				FBDA262B1EA64C7400FDA2A9 /* NFTypeTableViewCell.m in Sources */,
@@ -412,32 +470,21 @@
 				FB1C6A3D1EA5E4A500EEA4C7 /* NFBaseViewController.m in Sources */,
 				FB1C6A221EA5E2F800EEA4C7 /* AppDelegate.m in Sources */,
 				FB207F5C1EA7017700929744 /* NFWebViewController.m in Sources */,
+				FB48D2D91EA8557E00A7DE63 /* NFHudManager.m in Sources */,
 				FB0510AA1EA5EF1B000E756F /* NFMainViewController.m in Sources */,
 				FB0510BF1EA5FA67000E756F /* NFRecommendViewController.m in Sources */,
 				FB207FAE1EA7427B00929744 /* NFDisclaimerVC.m in Sources */,
 				FB207FAF1EA7427B00929744 /* NFMenuHeaderView.m in Sources */,
-				FB207FBC1EA743E100929744 /* NFOnlineManager.m in Sources */,
 				FB207FB01EA7427B00929744 /* NFMenuTableViewCell.m in Sources */,
-				FB207F6E1EA70C6900929744 /* NFHudManager.m in Sources */,
-				FB0510BC1EA5F9B5000E756F /* NFNetManger.m in Sources */,
+				FB48D2D41EA8555000A7DE63 /* NFNetManger.m in Sources */,
+				FB48D2D51EA8555000A7DE63 /* NFOnlineManager.m in Sources */,
 				FB1C6A371EA5E3C700EEA4C7 /* NFBaseNavigationController.m in Sources */,
-				FB0510BB1EA5F9B5000E756F /* NFBaseModel.m in Sources */,
+				FB48D2CA1EA84EEC00A7DE63 /* NFDBManager.m in Sources */,
 				FB1C6A1F1EA5E2F800EEA4C7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		FB1C6A2B1EA5E2F800EEA4C7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB1C6A2C1EA5E2F800EEA4C7 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FB1C6A2F1EA5E2F800EEA4C7 /* Debug */ = {
@@ -480,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -522,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -535,13 +582,14 @@
 			baseConfigurationReference = EBAC448062A86C636BA6907B /* Pods-NiceFood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = FMH449VCFF;
+				DEVELOPMENT_TEAM = XR62VH56F6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NiceFood/NFConfig/PrefixHeader_NF.pch";
 				INFOPLIST_FILE = NiceFood/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFoode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -551,13 +599,14 @@
 			baseConfigurationReference = 30C3FDA3CCA9DF39D2FA1882 /* Pods-NiceFood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = FMH449VCFF;
+				DEVELOPMENT_TEAM = XR62VH56F6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NiceFood/NFConfig/PrefixHeader_NF.pch";
 				INFOPLIST_FILE = NiceFood/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFoode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UILabel     *titleLabel;
 @property (nonatomic, strong) UIView      *lineView;
 @property (nonatomic, strong) UILabel     *desLabel;
+@property (nonatomic, strong) NFBaseModel *food;
 @end
 @implementation NFCollectionViewCell
 - (UIImageView *)imgView
@@ -49,6 +50,17 @@
     }
     return _desLabel;
 }
+- (UIButton *)deleteBtn
+{
+    if (!_deleteBtn) {
+        
+        _deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _deleteBtn.hidden = YES;
+        [_deleteBtn setImage:[UIImage imageNamed:@"删除 (8)"] forState:UIControlStateNormal];
+        [_deleteBtn addTarget:self action:@selector(setAnimationType) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _deleteBtn;
+}
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -59,6 +71,7 @@
         [self.contentView addSubview:self.titleLabel];
         [self.contentView addSubview:self.lineView];
         [self.contentView addSubview:self.desLabel];
+        [self.contentView addSubview:self.deleteBtn];
         [self setUpFrame];
     }
     return self;
@@ -94,11 +107,40 @@
         make.right.equalTo(_titleLabel.mas_right);
         make.bottom.equalTo(self.contentView);
     }];
+    
+    [_deleteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.equalTo(self.contentView).with.offset(0);
+        make.right.equalTo(self.contentView).with.offset(0);
+        make.size.mas_equalTo(CGSizeMake(35, 35));
+    }];
 }
 - (void)configModel:(NFBaseModel *)model
 {
+    _food = model;
     [_imgView sd_setImageWithURL:[NSURL URLWithString:model.img_url]];
     _titleLabel.text = model.title;
     _desLabel.text = model.descrip;
+}
+#pragma mark - LongGes
+- (void)setUpLongGes
+{
+    UILongPressGestureRecognizer *longGes = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longGesAction:)];
+    [self.contentView addGestureRecognizer:longGes];
+}
+- (void)longGesAction:(UILongPressGestureRecognizer *)ges
+{
+    if(ges.state == UIGestureRecognizerStateBegan) {
+        if (_delegate && [_delegate respondsToSelector:@selector(showAllDeleteBtn)]) {
+            [_delegate showAllDeleteBtn];
+        }
+    }
+}
+#pragma mark - setAnimationType
+- (void)setAnimationType
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(deleteFood:atIndexpath:)]) {
+        [_delegate deleteFood:_food atIndexpath:_indexPath];
+    }
 }
 @end

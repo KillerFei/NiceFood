@@ -12,5 +12,8 @@
 
 @property (nonatomic, strong) NSString *mainId;
 @property (nonatomic, strong) NSNumber *fid;
+@property (nonatomic, strong) NSString *pageUrl;
+
+@property (nonatomic, strong) NFBaseModel *food;
 
 @end

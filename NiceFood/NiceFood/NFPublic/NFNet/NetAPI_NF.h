@@ -12,11 +12,11 @@
 #define kNFBaseHostUrl                  @"https://zaijiawan.com"
 //主页面推荐接口
 //https://zaijiawan.com/matrix_common/api/recipe/detailsbook?appname=zhaoshipudaquan&hardware=iphone&os=ios&page=1&udid=11718b175e736c47cf703a86f1ebf13b16ba6d41&version=2.1.1
-#define kNFRecommendListUrl             @"https://zaijiawan.com/matrix_common/api/recipe/detailsbook"
+#define kNFRecommendListUrl             @"matrix_common/api/recipe/detailsbook"
 
 //主页面分类接口
 //https://zaijiawan.com/matrix_common/api/recipe/mainbook?appname=zhaoshipudaquan&hardware=iphone&info_flow_ad%3Dtrue=true&os=ios&udid=11718b175e736c47cf703a86f1ebf13b16ba6d41&version=2.1.1
-#define kNFTypeListUrl                   @"https://zaijiawan.com/matrix_common/api/recipe/mainbook"
+#define kNFTypeListUrl                   @"matrix_common/api/recipe/mainbook"
 //主页面广场分类接口
 //http://api.jiefu.tv/app2/api/dt/shareItem/getByTag.html?tagId=5&pageNum=0&pageSize=48
 #define kDTGetByTagUrl                  @"app2/api/dt/shareItem/getByTag.html"

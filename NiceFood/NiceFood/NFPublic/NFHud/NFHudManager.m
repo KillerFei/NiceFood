@@ -19,10 +19,10 @@
         return;
     }
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:view];
-    hud.bezelView.color = [UIColor clearColor];
+    hud.bezelView.color = [UIColor blackColor];
     hud.mode = MBProgressHUDModeIndeterminate;
     //设置转轮颜色
-    //    [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = RD_TabBar_SeletedCorlor;
+    [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = [UIColor whiteColor];
     [view addSubview:hud];
     [hud showAnimated:YES];
 }

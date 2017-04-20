@@ -17,4 +17,8 @@
 @property (nonatomic, strong) NSString *page_url;
 
 @property (nonatomic, strong) NSString *mainId;
+
+@property (nonatomic, strong) NSDate   *joinDate;
+@property (nonatomic, strong) NSString *reserve;
+
 @end
