@@ -29,13 +29,13 @@ static NSString *const kNFMenuCellIdentifier = @"myCellIdentifier";
 {
     if (!_myTableView) {
         _myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, KSCREEN_WIDTH, KSCREEN_HEIGHT-64) style:UITableViewStyleGrouped];
-        _myTableView.rowHeight = 60;
+        _myTableView.rowHeight = 55;
         _myTableView.delegate   = self;
         _myTableView.dataSource = self;
         _myTableView.backgroundColor = NF_Base_BgGrayColor;
         _myTableView.separatorColor = NF_Base_LineColor;
         [_myTableView registerClass:[NFMenuTableViewCell class] forCellReuseIdentifier:kNFMenuCellIdentifier];
-        _myTableView.tableHeaderView = [[NFMenuHeaderView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 165)];
+        _myTableView.tableHeaderView = [[NFMenuHeaderView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 180)];
     }
     return _myTableView;
 }
@@ -112,18 +112,18 @@ static NSString *const kNFMenuCellIdentifier = @"myCellIdentifier";
             break;
         case kNFMenuType_Clear:
             myCell.accessoryType = UITableViewCellAccessoryNone;
-            myCell.iconView.image = [UIImage imageNamed:@"dt_tabbar_make_selete"];
+            myCell.iconView.image = [UIImage imageNamed:@"nf_menu_clear"];
             myCell.titleLabel.text = @"清除缓存";
             myCell.titleLabel.textColor = RGB(255, 47, 57);
             myCell.cacheLabel.hidden = NO;
             myCell.cacheLabel.text = [NSString stringWithFormat:@"%.02fM",[[SDImageCache sharedImageCache] getSize]/1024.f/1024];
             break;
         case kNFMenuType_Judge:
-            myCell.iconView.image = [UIImage imageNamed:@"nf_menu_support@2x"];
+            myCell.iconView.image = [UIImage imageNamed:@"nf_menu_support"];
             myCell.titleLabel.text = @"给我们支持";
             break;
         case kNFMenuType_Declaration:
-            myCell.iconView.image = [UIImage imageNamed:@"nf_menu_declare3@2x"];
+            myCell.iconView.image = [UIImage imageNamed:@"nf_menu_declare"];
             myCell.titleLabel.text = @"免责声明";
             break;
         default:

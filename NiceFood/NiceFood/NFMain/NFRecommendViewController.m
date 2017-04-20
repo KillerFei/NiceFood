@@ -100,10 +100,14 @@
     } else {
         param = @{@"page":@(_page)};
     }
-    [NFHudManager showHudInView:self.view];
+    if (!_firstLoad) {
+        [NFHudManager showHudInView:self.view];
+    }
     [NFNetManger getFoodsWithParam:param callBack:^(NSError *error, NSArray *foods) {
         
-        [NFHudManager hideHudInView:self.view];
+        if (!_firstLoad) {
+            [NFHudManager hideHudInView:self.view];
+        }
         [self.myView.mj_header endRefreshing];
         [self.myView.mj_footer endRefreshing];
         if (!kArrayIsEmpty(foods)) {

@@ -59,20 +59,20 @@
         [self.contentView addSubview:self.titleLabel];
         [self.contentView addSubview:self.lineView];
         [self.contentView addSubview:self.desLabel];
+        [self setUpFrame];
     }
     return self;
 }
-- (void)layoutSubviews
+- (void)setUpFrame
 {
-    [super layoutSubviews];
     [_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.top.left.right.equalTo(self.contentView);
         make.height.mas_equalTo(@(CGRectGetHeight(self.contentView.frame)-60));
     }];
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.top.equalTo(_imgView.mas_bottom);
         make.left.equalTo(self.contentView).with.offset(5);
         make.right.equalTo(self.contentView).with.offset(-5);
@@ -88,7 +88,7 @@
     }];
     
     [_desLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.top.equalTo(_lineView.mas_bottom);
         make.left.equalTo(_titleLabel.mas_left);
         make.right.equalTo(_titleLabel.mas_right);

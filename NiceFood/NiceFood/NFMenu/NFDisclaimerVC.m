@@ -35,7 +35,7 @@
                                  NSForegroundColorAttributeName:NF_Base_TitleColor
                                  };
     
-    NSString *desStr = [NSString stringWithFormat:@"  斗图王部分表情来自网络，其版权归原作者所有，如有侵权，请及时联系，我们会尽快处理。欢迎表情制作者与我们联系，把您的表情分享给更多的用户。\n\n联系方式:\n邮箱:1468407663@qq.com"];
+    NSString *desStr = [NSString stringWithFormat:@"    %@部分内容来自用户，属个人行为，不代表%@立场，如有侵权，%@不因此承担任何法律责任。如有发现%@存在任何侵权行为，请及时联系，我们会尽快处理。欢迎广大用户监督。\n\n联系方式:\n邮箱:1468407663@qq.com",kAppName,kAppName,kAppName,kAppName];
     _disclaimerView.attributedText = [[NSAttributedString alloc] initWithString:desStr attributes:attributes];
     
     [self.view addSubview:_disclaimerView];

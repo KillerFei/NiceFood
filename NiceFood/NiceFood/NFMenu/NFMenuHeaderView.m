@@ -20,7 +20,7 @@
     if (self) {
         _logoView = [[UIImageView alloc]init];
         _logoView.layer.masksToBounds = YES;
-        _logoView.layer.cornerRadius  = 37.5;
+        _logoView.layer.cornerRadius  = 45;
         _logoView.image = [UIImage imageNamed:@"dt_icon"];
         _logoView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_logoView];
@@ -47,9 +47,9 @@
     [super layoutSubviews];
     [_logoView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(self).with.offset(40);
+        make.top.equalTo(self).with.offset(35);
         make.centerX.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(75, 75));
+        make.size.mas_equalTo(CGSizeMake(90, 90));
     }];
     
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
