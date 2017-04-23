@@ -55,7 +55,7 @@
     if (!_deleteBtn) {
         _deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _deleteBtn.hidden = YES;
-        [_deleteBtn setImage:[UIImage imageNamed:@"删除 (8)"] forState:UIControlStateNormal];
+        [_deleteBtn setImage:[UIImage imageNamed:@"nf_love_delete"] forState:UIControlStateNormal];
         [_deleteBtn addTarget:self action:@selector(deleteAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _deleteBtn;
@@ -110,7 +110,7 @@
        
         make.top.equalTo(self.contentView).with.offset(0);
         make.right.equalTo(self.contentView).with.offset(0);
-        make.size.mas_equalTo(CGSizeMake(35, 35));
+        make.size.mas_equalTo(CGSizeMake(40, 40));
     }];
 }
 #pragma mark - 配置数据

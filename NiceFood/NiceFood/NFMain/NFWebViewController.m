@@ -53,16 +53,28 @@
 #pragma mark - setRightNavItem
 - (void)setRightNavItem
 {
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, 30, 30);
-    [btn setImage:[UIImage imageNamed:@"nf_love_selete"] forState:UIControlStateSelected];
-    [btn setImage:[UIImage imageNamed:@"nf_love_normal"] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(collectBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
-    [self refreshRightNavBtn:btn];
+    UIButton *loveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    loveBtn.frame = CGRectMake(0, 0, 30, 44);
+    loveBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 8, 0, -8);
+    [loveBtn setImage:[UIImage imageNamed:@"love1"] forState:UIControlStateSelected];
+    [loveBtn setImage:[UIImage imageNamed:@"love2"] forState:UIControlStateNormal];
+    [loveBtn addTarget:self action:@selector(loveBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareBtn.frame = CGRectMake(0, 0, 30, 44);
+    shareBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 8, 0, -10);
+
+    [shareBtn setImage:[UIImage imageNamed:@"share3"] forState:UIControlStateNormal];
+    [shareBtn addTarget:self action:@selector(shareBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *loveItem = [[UIBarButtonItem alloc] initWithCustomView:loveBtn];
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
+    loveItem.width = -20;
+    
+    self.navigationItem.rightBarButtonItems = @[shareItem, loveItem];
 }
-#pragma marl - collectFood
-- (void)collectBtnAction:(UIButton *)sender
+#pragma marl - btnAction
+- (void)loveBtnAction:(UIButton *)sender
 {
     sender.selected = !sender.selected;
     if (sender.selected) {
@@ -74,6 +86,10 @@
             [[NFDBManager shareInstance] deleteFood:_food];
         }];
     }
+}
+- (void)shareBtnAction:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
 }
 #pragma mark - setUpWebView
 - (void)setUpWebView
