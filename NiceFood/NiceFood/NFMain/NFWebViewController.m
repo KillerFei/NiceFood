@@ -54,24 +54,24 @@
 - (void)setRightNavItem
 {
     UIButton *loveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    loveBtn.frame = CGRectMake(0, 0, 30, 44);
-    loveBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 8, 0, -8);
-    [loveBtn setImage:[UIImage imageNamed:@"love1"] forState:UIControlStateSelected];
-    [loveBtn setImage:[UIImage imageNamed:@"love2"] forState:UIControlStateNormal];
+    loveBtn.frame = CGRectMake(0, 0, 35, 44);
+    loveBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 6.5, 0, -6.5);
+    [loveBtn setImage:[UIImage imageNamed:@"nf_love_selete"] forState:UIControlStateSelected];
+    [loveBtn setImage:[UIImage imageNamed:@"nf_love_normal"] forState:UIControlStateNormal];
     [loveBtn addTarget:self action:@selector(loveBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    shareBtn.frame = CGRectMake(0, 0, 30, 44);
-    shareBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 8, 0, -10);
-
-    [shareBtn setImage:[UIImage imageNamed:@"share3"] forState:UIControlStateNormal];
+    shareBtn.frame = CGRectMake(35, 0, 35, 44);
+    shareBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 7, 0, -7);
+    [shareBtn setImage:[UIImage imageNamed:@"nf_share_bg"] forState:UIControlStateNormal];
     [shareBtn addTarget:self action:@selector(shareBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+
+    UIView *toolBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 70, 44)];
+    [toolBar addSubview:loveBtn];
+    [toolBar addSubview:shareBtn];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolBar];
     
-    UIBarButtonItem *loveItem = [[UIBarButtonItem alloc] initWithCustomView:loveBtn];
-    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
-    loveItem.width = -20;
-    
-    self.navigationItem.rightBarButtonItems = @[shareItem, loveItem];
+    [self refreshRightNavBtn:loveBtn];
 }
 #pragma marl - btnAction
 - (void)loveBtnAction:(UIButton *)sender
@@ -80,16 +80,22 @@
     if (sender.selected) {
         [NFDBManager runBlockInBackground:^{
             [[NFDBManager shareInstance] saveFood:_food];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [NFHudManager showMessage:@"收藏成功" InView:self.view];
+            });
         }];
     } else {
         [NFDBManager runBlockInBackground:^{
             [[NFDBManager shareInstance] deleteFood:_food];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [NFHudManager showMessage:@"取消收藏" InView:self.view];
+            });
         }];
     }
 }
 - (void)shareBtnAction:(UIButton *)sender
 {
-    sender.selected = !sender.selected;
+    NSLog(@"++++++++++++++++");
 }
 #pragma mark - setUpWebView
 - (void)setUpWebView
@@ -104,15 +110,12 @@
     NSURL *url = [NSURL URLWithString:str];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
+    [NFHudManager showHudInView:self.view];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 #pragma mark - webViewDelegate
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-    [NFHudManager showHudInView:self.view];
-}
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [NFHudManager hideHudInView:self.view];

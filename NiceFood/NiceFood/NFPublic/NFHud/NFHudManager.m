@@ -19,9 +19,9 @@
         return;
     }
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:view];
-    hud.bezelView.color = [UIColor blackColor];
     hud.mode = MBProgressHUDModeIndeterminate;
-    //设置转轮颜色
+    hud.bezelView.alpha = 1;
+    hud.bezelView.color = [UIColor blackColor];
     [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = [UIColor whiteColor];
     [view addSubview:hud];
     [hud showAnimated:YES];
@@ -32,11 +32,11 @@
         return;
     }
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:view];
-    hud.bezelView.color = [UIColor blackColor];
     hud.mode = MBProgressHUDModeText;
+    hud.label.textColor = [UIColor whiteColor];
+    hud.bezelView.color = [UIColor blackColor];
     hud.detailsLabel.text = message;
     hud.detailsLabel.textColor = [UIColor whiteColor];
-    hud.label.textColor        = [UIColor whiteColor];
     [view addSubview:hud];
     [hud showAnimated:YES];
     [hud hideAnimated:YES afterDelay:1.5];
