@@ -13,7 +13,6 @@
 
 typedef NS_ENUM(NSInteger, NFMenuType)
 {
-    kNFMenuType_Help,
     kNFMenuType_Declaration,
     kNFMenuType_Clear,
     kNFMenuType_Judge
@@ -61,9 +60,6 @@ static NSString *const kNFMenuCellIdentifier = @"myCellIdentifier";
 - (void)initItemMenu
 {
     NSMutableArray *section = [[NSMutableArray alloc] init];
-//    NSNumber *number = [NSNumber numberWithInteger:kNFMenuType_Help];
-//    [section addObject:number];
-    
     NSNumber *number = [NSNumber numberWithInteger:kNFMenuType_Judge];
     [section addObject:number];
     number = [NSNumber numberWithInteger:kNFMenuType_Declaration];
@@ -106,10 +102,6 @@ static NSString *const kNFMenuCellIdentifier = @"myCellIdentifier";
     NSArray *items = self.dataSource[indexPath.section];
     NSInteger item = [items[indexPath.row] integerValue];
     switch (item) {
-        case kNFMenuType_Help:
-            myCell.iconView.image = [UIImage imageNamed:@"dt_my_help"];
-            myCell.titleLabel.text = @"使用帮助";
-            break;
         case kNFMenuType_Clear:
             myCell.accessoryType = UITableViewCellAccessoryNone;
             myCell.iconView.image = [UIImage imageNamed:@"nf_menu_clear"];
@@ -136,8 +128,6 @@ static NSString *const kNFMenuCellIdentifier = @"myCellIdentifier";
     NSArray *items = self.dataSource[indexPath.section];
     NSInteger item = [items[indexPath.row] integerValue];
     switch (item) {
-        case kNFMenuType_Help:
-            break;
         case kNFMenuType_Clear:
             [self clearCachesAtIndexPath:indexPath];
             break;
@@ -157,6 +147,7 @@ static NSString *const kNFMenuCellIdentifier = @"myCellIdentifier";
 {
     NFDisclaimerVC *disVC = [[NFDisclaimerVC alloc] init];
     disVC.navTitle = @"免责声明";
+    [MobClick event:kNFDeclareClick];
     [self.navigationController pushViewController:disVC animated:YES];
 }
 // 清楚缓存
@@ -166,6 +157,7 @@ static NSString *const kNFMenuCellIdentifier = @"myCellIdentifier";
     NFMenuTableViewCell *myCell = [self.myTableView cellForRowAtIndexPath:indexpath];
     myCell.cacheLabel.text = @"0.00M";
     [NFHudManager showMessage:@"清除成功" InView:self.view];
+    [MobClick event:kNFClearCacheClick];
 }
 // 给好评
 - (void)doJudge
@@ -175,5 +167,6 @@ static NSString *const kNFMenuCellIdentifier = @"myCellIdentifier";
     NSString *version = [NFOnlineManager currentVerson];
     [[NSUserDefaults standardUserDefaults] setObject:version forKey:kNFVersionCommentKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [MobClick event:kNFSupportClick];
 }
 @end

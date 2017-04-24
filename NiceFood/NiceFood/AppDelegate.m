@@ -20,9 +20,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self setUpBaseNetwork];
+    [self setUpUMClick];
     [self setUpKeyWindow];
     [self setUpLaunchView];
     return YES;
+}
+#pragma mark - setUpUMClick
+- (void)setUpUMClick
+{
+    UMConfigInstance.appKey = kUMAppKey;
+    UMConfigInstance.channelId = @"App Store";
+    [MobClick startWithConfigure:UMConfigInstance];
+    [MobClick event:kNFFinishLaunch];
 }
 #pragma mark - setUpLaunchAnim
 - (void)setUpLaunchView

@@ -15,6 +15,7 @@
     BOOL _deleteFlag;
     BOOL _firstLoad;
 }
+@property (nonatomic, strong) UIView                 *noResultView;
 @property (nonatomic, strong) UICollectionView       *myView;
 @property (nonatomic, strong) NSMutableArray         *dataSource;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGes;
@@ -47,6 +48,16 @@
     }
     return _dataSource;
 }
+- (UIView *)noResultView
+{
+    if (!_noResultView) {
+        _noResultView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-64)];
+        UIImageView *noReultImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nf_noLiked"]];
+        noReultImg.center = CGPointMake(KSCREEN_WIDTH/2, (KSCREEN_HEIGHT-204)/2);
+        [_noResultView addSubview:noReultImg];
+    }
+    return _noResultView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpFlag];
@@ -60,12 +71,30 @@
         [self.dataSource removeAllObjects];
         [self.dataSource addObjectsFromArray:[[NFDBManager shareInstance] getFoods]];
          dispatch_async(dispatch_get_main_queue(), ^{
-             if (_firstLoad) {
+             
+             [self addNoResultView];
+             [self removeNoResultView];
+             if (_firstLoad && self.dataSource.count > 0) {
                  [self.myView reloadData];
              }
              _firstLoad = YES;
          });
     }];
+}
+- (void)addNoResultView
+{
+    if (kArrayIsEmpty(self.dataSource)) {
+        [self.view addSubview:self.noResultView];
+    }
+}
+- (void)removeNoResultView
+{
+    if (!kArrayIsEmpty(self.dataSource)) {
+        if (_noResultView && [_noResultView superview]) {
+            [_noResultView removeFromSuperview];
+            _noResultView = nil;
+        }
+    }
 }
 #pragma mark - 初始化标记
 - (void)setUpFlag
@@ -119,6 +148,7 @@
     webVC.navTitle = baseModel.title;
     webVC.pageUrl  = baseModel.page_url;
     webVC.food     = baseModel;
+    [MobClick event:KNFCollectViewClick];
     [self.navigationController pushViewController:webVC animated:YES];
 }
 #pragma mark -  添加动画
@@ -164,6 +194,7 @@
     [NFDBManager runBlockInBackground:^{
         [[NFDBManager shareInstance] deleteFood:food];
     }];
+    [MobClick event:KNFCancleLoveClick_Collect];
     [self.myView performBatchUpdates:^{
         [self.dataSource removeObject:food];
         [self.myView deleteItemsAtIndexPaths:@[indexPath]];
@@ -171,6 +202,8 @@
         if (self.dataSource.count == 0) {
             _deleteFlag = NO;
             _tapGes.enabled = NO;
+            [self addNoResultView];
+            [NFHudManager showMessage:@"取消收藏成功" InView:self.view];
         }
         [self.myView reloadData];
     }];

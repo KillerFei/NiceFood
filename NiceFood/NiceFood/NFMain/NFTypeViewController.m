@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) UITableView    *myTab;
 @property (nonatomic, strong) NSMutableArray *dataArr;
-
+@property (nonatomic, strong) UIView         *noResultView;
 @end
 
 @implementation NFTypeViewController
@@ -38,6 +38,20 @@
         _dataArr = [[NSMutableArray alloc] init];
     }
     return _dataArr;
+}
+- (UIView *)noResultView
+{
+    if (!_noResultView) {
+        _noResultView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-64)];
+        UIImageView *noReultImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nf_net_faild"]];
+        noReultImg.center = CGPointMake(KSCREEN_WIDTH/2, (KSCREEN_HEIGHT-204)/2);
+        noReultImg.userInteractionEnabled = YES;
+        [_noResultView addSubview:noReultImg];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+        [_noResultView addGestureRecognizer:tap];
+    }
+    return _noResultView;
 }
 
 - (void)viewDidLoad {
@@ -69,11 +83,12 @@
        
         [NFHudManager hideHudInView:self.view];
         if (!kArrayIsEmpty(foods)) {
+            [self removeNoResultView];
             [self.dataArr removeAllObjects];
             [self.dataArr addObjectsFromArray:foods];
             [self.myTab reloadData];
         } else {
-            [NFHudManager showMessage:@"网络错误" InView:self.view];
+            [self.view addSubview:self.noResultView];
         }
     }];
 }
@@ -99,8 +114,21 @@
     NFRecommendViewController *reVC = [[NFRecommendViewController alloc] init];
     NFBaseModel *baseModel = self.dataArr[indexPath.row];
     if (kStringIsEmpty(baseModel.mainId)) return;
+    [MobClick event:KNFTypeListViewClick];
     reVC.mainId   = baseModel.mainId;
     reVC.navTitle = baseModel.title;
     [self.navigationController pushViewController:reVC animated:YES];
+}
+#pragma mark -tapAction
+- (void)tapAction
+{
+    [self requestData];
+}
+- (void)removeNoResultView
+{
+    if (_noResultView && [_noResultView superview]) {
+        [_noResultView removeFromSuperview];
+        _noResultView = nil;
+    }
 }
 @end

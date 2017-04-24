@@ -26,8 +26,6 @@
 #import "AFNetworking.h"
 #import "HYBNetworking.h"
 #import "MBProgressHUD.h"
-#import "SDWebImageManager.h"
-#import <SDWebImage/UIImage+GIF.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-
+#import <UMengAnalytics/UMMobClick/MobClick.h>
 #endif /* PrefixHeader_NF_pch */

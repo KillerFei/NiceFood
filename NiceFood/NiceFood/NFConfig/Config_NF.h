@@ -9,8 +9,9 @@
 #ifndef Config_NF_h
 #define Config_NF_h
 
-#define kAppName                  @"美食家"
+#define kAppName                  @"美食菜谱大全"
 #define kAppUrl                   @""
+#define kUMAppKey                 @"58fd5b0a4ad1561acc00202e"
 
 // key
 #define kDTLastVersionKey         @"lastVersion"
@@ -78,5 +79,21 @@
 || [_object isKindOfClass:[NSNull class]] \
 || ([_object respondsToSelector:@selector(length)] && [(NSData *)_object length] == 0) \
 || ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
+
+
+// ===================== UM =====================
+#define kNFFinishLaunch            @"KFinishLaunch"
+#define kNFMenuBtnClick            @"KMenuBtnClick"
+#define kNFSupportClick            @"KSupportClick"
+#define kNFDeclareClick            @"KDeclareClick"
+#define kNFClearCacheClick         @"KClearCacheClick"
+#define kNFLoveBtnClick            @"KLoveBtnClick"
+#define kNFCancleLoveClick         @"KCancelLoveClick"
+#define KNFCancleLoveClick_Collect @"KCancelLoveClick_Collect"
+#define KNFRecommendViewClick      @"KRecommendClick"
+#define KNFTypeListViewClick       @"KTypeListViewClick"
+#define KNFCollectViewClick        @"KCollectViewClick"
+#define KNFFoodDetailViewShow      @"KFoodDetailShow"
+#define KNFTypeListFoodClick       @"KTypeListFoodClick"
 
 #endif /* Config_NF_h */

@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSMutableArray   *reFoods;
 @property (nonatomic, assign) NSInteger        page;
 @property (nonatomic, assign) BOOL             firstLoad;
+@property (nonatomic, strong) UIView           *noResultView;
 @end
 
 @implementation NFRecommendViewController
@@ -49,6 +50,20 @@
         _reFoods = [[NSMutableArray alloc] init];
     }
     return _reFoods;
+}
+- (UIView *)noResultView
+{
+    if (!_noResultView) {
+        _noResultView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT-64)];
+        UIImageView *noReultImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nf_net_faild"]];
+        noReultImg.center = CGPointMake(KSCREEN_WIDTH/2, (KSCREEN_HEIGHT-204)/2);
+        noReultImg.userInteractionEnabled = YES;
+        [_noResultView addSubview:noReultImg];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+        [_noResultView addGestureRecognizer:tap];
+    }
+    return _noResultView;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -119,6 +134,7 @@
             
             if (_page == 1) {
                 [self.reFoods removeAllObjects];
+                [self removeNoResultView];
             }
             [self.reFoods addObjectsFromArray:foods];
             [self.myView reloadData];
@@ -126,7 +142,7 @@
             
         } else {
             if (kArrayIsEmpty(self.reFoods)) {
-                [NFHudManager showMessage:@"网络错误" InView:self.view];
+                [self.view addSubview:self.noResultView];
             }
             [self.myView.mj_footer endRefreshingWithNoMoreData];
         }
@@ -155,14 +171,28 @@
     webVC.navTitle = baseModel.title;
     if (kStringIsEmpty(_mainId)) {
        webVC.mainId   = @"19";
+       [MobClick event:KNFRecommendViewClick];
     } else {
         webVC.mainId   = baseModel.mainId;
+        [MobClick event:KNFTypeListFoodClick];
     }
     webVC.fid = baseModel.fid;
     webVC.food = baseModel;
     [self.navigationController pushViewController:webVC animated:YES];
 }
-
+#pragma mark - tapAction
+- (void)tapAction
+{
+    _page = 1;
+    [self requestData];
+}
+- (void)removeNoResultView
+{
+    if (_noResultView && [_noResultView superview]) {
+        [_noResultView removeFromSuperview];
+        _noResultView = nil;
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

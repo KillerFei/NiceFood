@@ -78,6 +78,7 @@
 {
     sender.selected = !sender.selected;
     if (sender.selected) {
+        [MobClick event:kNFLoveBtnClick];
         [NFDBManager runBlockInBackground:^{
             [[NFDBManager shareInstance] saveFood:_food];
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -85,6 +86,7 @@
             });
         }];
     } else {
+        [MobClick event:kNFCancleLoveClick];
         [NFDBManager runBlockInBackground:^{
             [[NFDBManager shareInstance] deleteFood:_food];
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -100,6 +102,7 @@
 #pragma mark - setUpWebView
 - (void)setUpWebView
 {
+    [MobClick event:KNFFoodDetailViewShow];
     [self.view addSubview:self.webView];
     NSString *str = nil;
     if (!kStringIsEmpty(_pageUrl)) {

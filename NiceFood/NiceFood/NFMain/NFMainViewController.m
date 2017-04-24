@@ -106,6 +106,7 @@
 {
     NFMenuViewController *menuVC = [[NFMenuViewController alloc] init];
     menuVC.navTitle = @"更多";
+    [MobClick event:kNFMenuBtnClick];
     [self.navigationController pushViewController:menuVC animated:YES];
 }
 #pragma mark - btnAction
