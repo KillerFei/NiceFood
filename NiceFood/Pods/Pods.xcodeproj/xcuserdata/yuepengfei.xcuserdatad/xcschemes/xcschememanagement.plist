@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DXPopover-DXPopover.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DXPopover.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FDFullscreenPopGesture.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,12 +67,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>15E71DC389AF81EB7D768EBA0F13A0C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2C71DE0FB8A6E5BB6EAF9FB037D799CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5F7AD51A7EE2CFA586037B461F1F9EC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,17 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BD25B2157D8BCA944D6FF3EC2B073ECB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D058B89EB3B3DF45457A2DCD3971AFFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E97E720662FE3C5398662905E9343405</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EEACA96C65DF5F1298317367CF5E8325</key>
+		<key>FD6A7B99B73BCBEE6F1FCC49DCBFE02F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

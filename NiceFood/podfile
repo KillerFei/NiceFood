@@ -10,4 +10,5 @@ pod 'FMDB'
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'FDFullscreenPopGesture', '~> 1.1'
 pod 'UMengAnalytics'
+pod "DXPopover"
 end

@@ -83,7 +83,6 @@
        
         [NFHudManager hideHudInView:self.view];
         if (!kArrayIsEmpty(foods)) {
-            [self removeNoResultView];
             [self.dataArr removeAllObjects];
             [self.dataArr addObjectsFromArray:foods];
             [self.myTab reloadData];
@@ -122,6 +121,7 @@
 #pragma mark -tapAction
 - (void)tapAction
 {
+    [self removeNoResultView];
     [self requestData];
 }
 - (void)removeNoResultView

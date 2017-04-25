@@ -7,15 +7,18 @@
 //
 
 #import "NFWebViewController.h"
+#import "DXPopover.h"
 
 @interface NFWebViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) NSArray   *colletFoods;
+@property (nonatomic, strong) DXPopover *popover;
+@property (nonatomic, strong) UIButton  *shareBtn;
+@property (nonatomic, strong) UIView    *shareView;
 @end
 
 @implementation NFWebViewController
-
 - (UIWebView *)webView
 {
     if (!_webView) {
@@ -25,6 +28,23 @@
         _webView.delegate = self;
     }
     return _webView;
+}
+- (DXPopover *)popover
+{
+    if (!_popover) {
+        _popover = [DXPopover new];
+        _popover.backgroundColor = RGB(255, 178, 30);
+        _popover.contentInset = UIEdgeInsetsMake(1, 1, 1, 1);
+    }
+    return _popover;
+}
+- (UIView *)shareView
+{
+    if (!_shareView) {
+        _shareView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+        _shareView.backgroundColor = [UIColor orangeColor];
+    }
+    return _shareView;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,15 +80,15 @@
     [loveBtn setImage:[UIImage imageNamed:@"nf_love_normal"] forState:UIControlStateNormal];
     [loveBtn addTarget:self action:@selector(loveBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    shareBtn.frame = CGRectMake(35, 0, 35, 44);
-    shareBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 7, 0, -7);
-    [shareBtn setImage:[UIImage imageNamed:@"nf_share_bg"] forState:UIControlStateNormal];
-    [shareBtn addTarget:self action:@selector(shareBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    _shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _shareBtn.frame = CGRectMake(35, 0, 35, 44);
+    _shareBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 7, 0, -7);
+    [_shareBtn setImage:[UIImage imageNamed:@"nf_share_bg"] forState:UIControlStateNormal];
+    [_shareBtn addTarget:self action:@selector(shareBtnAction:) forControlEvents:UIControlEventTouchUpInside];
 
     UIView *toolBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 70, 44)];
     [toolBar addSubview:loveBtn];
-    [toolBar addSubview:shareBtn];
+    [toolBar addSubview:_shareBtn];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolBar];
     
     [self refreshRightNavBtn:loveBtn];
@@ -97,7 +117,30 @@
 }
 - (void)shareBtnAction:(UIButton *)sender
 {
-    NSLog(@"++++++++++++++++");
+    CGRect coverRect = [_shareBtn.superview convertRect:_shareBtn.frame toView:self.view];
+    CGPoint startPoint = CGPointMake(CGRectGetMidX(coverRect),CGRectGetMaxY(coverRect));
+    [self.popover showAtPoint:startPoint
+               popoverPostion:DXPopoverPositionDown
+              withContentView:self.shareView
+                       inView:self.navigationController.view];
+    WS(ws);
+    self.popover.didDismissHandler = ^{
+        [ws bounceTargetView:ws.shareBtn];
+        ws.shareBtn.selected = !ws.shareBtn.selected;
+    };
+
+}
+- (void)bounceTargetView:(UIView *)targetView {
+    targetView.transform = CGAffineTransformMakeScale(0.9, 0.9);
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+         usingSpringWithDamping:0.3
+          initialSpringVelocity:5
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         targetView.transform = CGAffineTransformIdentity;
+                     }
+                     completion:nil];
 }
 #pragma mark - setUpWebView
 - (void)setUpWebView

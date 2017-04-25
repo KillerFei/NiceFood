@@ -116,17 +116,14 @@
     } else {
         param = @{@"page":@(_page)};
     }
-    if (!kStringIsEmpty(_mainId) && !_firstLoad) {
+    if (!_firstLoad) {
         [NFHudManager showHudInView:self.view];
     }
     [NFNetManger getFoodsWithParam:param callBack:^(NSError *error, NSArray *foods) {
         
-        if (!kStringIsEmpty(_mainId) && !_firstLoad ) {
+        if (!_firstLoad) {
             [NFHudManager hideHudInView:self.view];
-        } else {
-            if (!_firstLoad) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:kNFRemoveLaunchViewNoti object:nil];
-            }
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNFRemoveLaunchViewNoti object:nil];
         }
         [self.myView.mj_header endRefreshing];
         [self.myView.mj_footer endRefreshing];
@@ -134,7 +131,6 @@
             
             if (_page == 1) {
                 [self.reFoods removeAllObjects];
-                [self removeNoResultView];
             }
             [self.reFoods addObjectsFromArray:foods];
             [self.myView reloadData];
@@ -184,6 +180,7 @@
 - (void)tapAction
 {
     _page = 1;
+    [self removeNoResultView];
     [self requestData];
 }
 - (void)removeNoResultView

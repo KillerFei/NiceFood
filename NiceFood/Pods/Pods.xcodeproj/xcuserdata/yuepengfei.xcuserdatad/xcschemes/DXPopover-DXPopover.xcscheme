@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5F7AD51A7EE2CFA586037B461F1F9EC4'
-               BlueprintName = 'SDWebImage'
+               BlueprintIdentifier = 'BD25B2157D8BCA944D6FF3EC2B073ECB'
+               BlueprintName = 'DXPopover-DXPopover'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSDWebImage.a'>
+               BuildableName = 'DXPopover.bundle'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
