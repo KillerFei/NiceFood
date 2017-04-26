@@ -106,6 +106,8 @@
 		FB5F759B1EACBA8E00E6AE30 /* NFWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFWebViewController.m; sourceTree = "<group>"; };
 		FB5F762F1EACE17D00E6AE30 /* nf_love_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_love_delete@2x.png"; sourceTree = "<group>"; };
 		FB5F76301EACE17D00E6AE30 /* nf_love_delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_love_delete@3x.png"; sourceTree = "<group>"; };
+		FBD708961EB03A4100093E03 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		FBD708981EB03A4A00093E03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FBD8A1701EA9ED07003D158E /* NFBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBaseNavigationController.m; sourceTree = "<group>"; };
 		FBDA26291EA64C7400FDA2A9 /* NFTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFTypeTableViewCell.h; sourceTree = "<group>"; };
 		FBDA262A1EA64C7400FDA2A9 /* NFTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFTypeTableViewCell.m; sourceTree = "<group>"; };
@@ -142,6 +144,8 @@
 		19BBE0179637D8E700E1FDE5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FBD708981EB03A4A00093E03 /* CoreGraphics.framework */,
+				FBD708961EB03A4100093E03 /* libsqlite3.tbd */,
 				EB034A09B3392972C09469A6 /* libPods-NiceFood.a */,
 			);
 			name = Frameworks;
@@ -287,6 +291,7 @@
 		FB48D2C51EA84E5A00A7DE63 /* NFPublic */ = {
 			isa = PBXGroup;
 			children = (
+				FBD7087C1EB0371B00093E03 /* UM */,
 				FBE8F4611EA8F80B005108CF /* NFEx */,
 				FB48D2D61EA8557E00A7DE63 /* NFHud */,
 				FB48D2CB1EA8555000A7DE63 /* NFNet */,
@@ -325,6 +330,13 @@
 				FB48D2D81EA8557E00A7DE63 /* NFHudManager.m */,
 			);
 			path = NFHud;
+			sourceTree = "<group>";
+		};
+		FBD7087C1EB0371B00093E03 /* UM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UM;
 			sourceTree = "<group>";
 		};
 		FBE8F4611EA8F80B005108CF /* NFEx */ = {
@@ -603,11 +615,22 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XR62VH56F6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialUI",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NiceFood/NFConfig/PrefixHeader_NF.pch";
 				INFOPLIST_FILE = NiceFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFood;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDKPlugin",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.xin.SDKSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -620,11 +643,22 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XR62VH56F6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialUI",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NiceFood/NFConfig/PrefixHeader_NF.pch";
 				INFOPLIST_FILE = NiceFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fly.NiceFood;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDKPlugin",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.xin.SDKSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
