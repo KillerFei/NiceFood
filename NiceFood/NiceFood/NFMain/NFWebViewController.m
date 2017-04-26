@@ -148,6 +148,12 @@
 - (void)setUpUMShareType
 {
     [UMSocialUIManager setPreDefinePlatforms:@[@1,@2,@4,@5]];
+    [UMSocialShareUIConfig shareInstance].shareTitleViewConfig.isShow = NO;
+    [UMSocialShareUIConfig shareInstance].shareCancelControlConfig.isShow = NO;
+    
+    [UMSocialShareUIConfig shareInstance].shareContainerConfig.isShareContainerHaveGradient = NO;
+    [UMSocialShareUIConfig shareInstance].sharePageScrollViewConfig.shareScrollViewBackgroundColor = [UIColor whiteColor];
+    [UMSocialShareUIConfig shareInstance].sharePageScrollViewConfig.shareScrollViewPageBGColor = [UIColor whiteColor];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
