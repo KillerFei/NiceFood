@@ -166,6 +166,8 @@
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"WebKitDiskImageCacheEnabled"];
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"WebKitOfflineWebApplicationCacheEnabled"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [NFOnlineManager gotoJudge];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {

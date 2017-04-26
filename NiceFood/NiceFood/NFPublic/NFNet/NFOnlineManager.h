@@ -14,4 +14,6 @@
 
 + (NSString *)currentVerson;
 
++ (void)gotoJudge;
+
 @end
