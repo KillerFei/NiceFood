@@ -7,6 +7,7 @@
 //
 
 #import "NFWebViewController.h"
+#import <UShareUI/UShareUI.h>
 
 @interface NFWebViewController ()<UIWebViewDelegate>
 
@@ -40,6 +41,7 @@
     [self setLeftBackNavItem];
     [self setRightNavItem];
     [self setUpWebView];
+    [self setUpUMShareType];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -69,16 +71,16 @@
     [loveBtn setImage:[UIImage imageNamed:@"nf_love_normal"] forState:UIControlStateNormal];
     [loveBtn addTarget:self action:@selector(loveBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     
-//    _shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    _shareBtn.frame = CGRectMake(35, 0, 35, 44);
-//    _shareBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 7, 0, -7);
-//    [_shareBtn setImage:[UIImage imageNamed:@"nf_share_bg"] forState:UIControlStateNormal];
-//    [_shareBtn addTarget:self action:@selector(shareBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    _shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _shareBtn.frame = CGRectMake(35, 0, 35, 44);
+    _shareBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 7, 0, -7);
+    [_shareBtn setImage:[UIImage imageNamed:@"nf_share_bg"] forState:UIControlStateNormal];
+    [_shareBtn addTarget:self action:@selector(shareBtnAction:) forControlEvents:UIControlEventTouchUpInside];
 
-//    UIView *toolBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 70, 44)];
-//    [toolBar addSubview:loveBtn];
-//    [toolBar addSubview:_shareBtn];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loveBtn];
+    UIView *toolBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 70, 44)];
+    [toolBar addSubview:loveBtn];
+    [toolBar addSubview:_shareBtn];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolBar];
     
     [self refreshRightNavBtn:loveBtn];
 }
@@ -106,11 +108,25 @@
 }
 - (void)shareBtnAction:(UIButton *)sender
 {
-//    [UMSocialUIManager setPreDefinePlatforms:@[@(UMSocialPlatformType_Sina),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_Qzone),@(UMSocialPlatformType_WechatTimeLine)]];
-//    
-//    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-//        // 根据获取的platformType确定所选平台进行下一步操作
-//    }];
+    //显示分享面板
+    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+        [self shareWebPageToPlatformType:platformType];
+        [MobClick event:kNFShareBtnClick];
+    }];
+}
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
+{
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    //创建网页内容对象
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"美食菜谱大全" descr:@"我用过的最好用的菜谱App，你下载试试" thumImage:[UIImage imageNamed:@"nf_icon.jpg"]];
+    //设置网页地址
+    shareObject.webpageUrl = kAppUrl;
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+    }];
 }
 #pragma mark - setUpWebView
 - (void)setUpWebView
@@ -127,6 +143,11 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
     [NFHudManager showHudInView:self.view];
+}
+#pragma mark - setUpUMShareType
+- (void)setUpUMShareType
+{
+    [UMSocialUIManager setPreDefinePlatforms:@[@1,@2,@4,@5]];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

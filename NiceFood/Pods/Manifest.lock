@@ -28,6 +28,15 @@ PODS:
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - UMengAnalytics (4.2.4)
+  - UMengUShare/Core (6.4.3):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.3)
+  - UMengUShare/Social/ReducedQQ (6.4.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.3):
+    - UMengUShare/Core
+  - UMengUShare/UI (6.4.3):
+    - UMengUShare/Core
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -40,6 +49,9 @@ DEPENDENCIES:
   - MJRefresh
   - SDWebImage (~> 3.8)
   - UMengAnalytics
+  - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/UI
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -52,7 +64,8 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+  UMengUShare: d39cb682598df87ebdd3c055d03d00eb0102d42c
 
-PODFILE CHECKSUM: 7bf15676d574a7d1ab008e609a10a37613815db2
+PODFILE CHECKSUM: 37d0367a5d4abaf2f6922a769adb919cf6d8f08b
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.1.beta.1

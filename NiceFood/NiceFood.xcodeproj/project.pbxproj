@@ -36,6 +36,7 @@
 		FB5F76321EACE17D00E6AE30 /* nf_love_delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5F76301EACE17D00E6AE30 /* nf_love_delete@3x.png */; };
 		FBD8A1711EA9ED07003D158E /* NFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD8A1701EA9ED07003D158E /* NFBaseNavigationController.m */; };
 		FBDA262B1EA64C7400FDA2A9 /* NFTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDA262A1EA64C7400FDA2A9 /* NFTypeTableViewCell.m */; };
+		FBDF8E3C1EB0D9BF0012EB2F /* nf_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBDF8E3B1EB0D9BF0012EB2F /* nf_icon.jpg */; };
 		FBE4D8F41EAD035B0010BF75 /* nf_love_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBE4D8F01EAD035B0010BF75 /* nf_love_normal@2x.png */; };
 		FBE4D8F51EAD035B0010BF75 /* nf_love_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBE4D8F11EAD035B0010BF75 /* nf_love_normal@3x.png */; };
 		FBE4D8F61EAD035B0010BF75 /* nf_love_selete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBE4D8F21EAD035B0010BF75 /* nf_love_selete@2x.png */; };
@@ -111,6 +112,7 @@
 		FBD8A1701EA9ED07003D158E /* NFBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBaseNavigationController.m; sourceTree = "<group>"; };
 		FBDA26291EA64C7400FDA2A9 /* NFTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFTypeTableViewCell.h; sourceTree = "<group>"; };
 		FBDA262A1EA64C7400FDA2A9 /* NFTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFTypeTableViewCell.m; sourceTree = "<group>"; };
+		FBDF8E3B1EB0D9BF0012EB2F /* nf_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nf_icon.jpg; sourceTree = "<group>"; };
 		FBE4D8F01EAD035B0010BF75 /* nf_love_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_love_normal@2x.png"; sourceTree = "<group>"; };
 		FBE4D8F11EAD035B0010BF75 /* nf_love_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_love_normal@3x.png"; sourceTree = "<group>"; };
 		FBE4D8F21EAD035B0010BF75 /* nf_love_selete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nf_love_selete@2x.png"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		FB207F601EA7059700929744 /* NFPic */ = {
 			isa = PBXGroup;
 			children = (
+				FBDF8E3B1EB0D9BF0012EB2F /* nf_icon.jpg */,
 				FB5B47751EADB1FE0010EA76 /* nf_net_faild@2x.png */,
 				FB48D2F91EA89C6C00A7DE63 /* nf_launch_top.jpg */,
 				FBE5A5D41EA77A10002ABF8A /* nf_nav_rightMenu@2x.png */,
@@ -382,7 +385,7 @@
 				TargetAttributes = {
 					FB1C6A191EA5E2F800EEA4C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = XR62VH56F6;
+						DevelopmentTeam = FMH449VCFF;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -428,6 +431,7 @@
 				FB5F76321EACE17D00E6AE30 /* nf_love_delete@3x.png in Resources */,
 				FBE5A5CB1EA7779D002ABF8A /* nf_menu_support@3x.png in Resources */,
 				FB48D2FA1EA89C6C00A7DE63 /* nf_launch_top.jpg in Resources */,
+				FBDF8E3C1EB0D9BF0012EB2F /* nf_icon.jpg in Resources */,
 				FB5F76311EACE17D00E6AE30 /* nf_love_delete@2x.png in Resources */,
 				FB1C6A2A1EA5E2F800EEA4C7 /* Assets.xcassets in Resources */,
 				FBE4D8F41EAD035B0010BF75 /* nf_love_normal@2x.png in Resources */,
@@ -480,7 +484,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -614,7 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XR62VH56F6;
+				DEVELOPMENT_TEAM = FMH449VCFF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDK",
@@ -630,7 +634,7 @@
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDKPlugin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.xin.SDKSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niceFood.fly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -642,7 +646,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XR62VH56F6;
+				DEVELOPMENT_TEAM = FMH449VCFF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDK",
@@ -658,7 +662,7 @@
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDKPlugin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.xin.SDKSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niceFood.fly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

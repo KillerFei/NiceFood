@@ -12,6 +12,8 @@
 #define kAppName                  @"美食菜谱大全"
 #define kAppUrl                   @""
 #define kUMAppKey                 @"58fd5b0a4ad1561acc00202e"
+#define kQQAppId                  @"1106126008"
+#define kQQAppKey                 @"GgrbW83vKfbIaLeI"
 
 // key
 #define kDTLastVersionKey         @"lastVersion"
@@ -95,5 +97,6 @@
 #define KNFCollectViewClick        @"KCollectViewClick"
 #define KNFFoodDetailViewShow      @"KFoodDetailShow"
 #define KNFTypeListFoodClick       @"KTypeListFoodClick"
+#define kNFShareBtnClick           @"KShareBtnClick"
 
 #endif /* Config_NF_h */
