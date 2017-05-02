@@ -21,7 +21,7 @@
         _logoView = [[UIImageView alloc]init];
         _logoView.layer.masksToBounds = YES;
         _logoView.layer.cornerRadius  = 45;
-        _logoView.image = [UIImage imageNamed:@"nf_icon.jpg"];
+        _logoView.image = [UIImage imageNamed:@"nf_icon"];
         _logoView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_logoView];
         
@@ -58,7 +58,6 @@
         make.left.right.equalTo(self);
         make.height.mas_equalTo(@15);
     }];
-    
     [_versionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(_nameLabel.mas_bottom).with.offset(10);
