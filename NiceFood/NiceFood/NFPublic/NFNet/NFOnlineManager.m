@@ -16,7 +16,7 @@
 //检查更新
 + (BOOL)bUpdate
 {
-    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kDTLastVersionKey];
+    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kNFLastVersionKey];
     if (!lastVersion) {
         return NO;
     }

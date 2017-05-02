@@ -16,9 +16,10 @@
 #define kQQAppKey                 @"GgrbW83vKfbIaLeI"
 
 // key
-#define kDTLastVersionKey         @"lastVersion"
+#define kNFLastVersionKey         @"lastVersion"
 #define kNFVersionCommentKey      @"versionCommentKey"
 #define kNFRemoveLaunchViewNoti   @"removeLaunchViewNoti"
+#define kNFFirstVersionKey        @"firstVersionKey"
 
 #define kNFReadFoodCount          @"readFoodCount"
 //----------------------UI类--------------------------

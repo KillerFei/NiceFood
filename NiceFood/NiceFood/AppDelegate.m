@@ -10,8 +10,9 @@
 #import "NFMainViewController.h"
 #import "NFBaseNavigationController.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import <AdSupport/AdSupport.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIImageView *launchView;
 @end
@@ -24,6 +25,8 @@
     [self setUpUMClick];
     [self setUpKeyWindow];
     [self setUpLaunchView];
+    [self checkUpVersion];
+    
     return YES;
 }
 #pragma mark - setUpUMClick
@@ -39,14 +42,6 @@
     
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:kQQAppId appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
-}
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
-    if (!result) {
-        // 其他如支付等SDK的回调
-    }
-    return result;
 }
 #pragma mark - setUpLaunchAnim
 - (void)setUpLaunchView
@@ -102,6 +97,7 @@
     [HYBNetworking cacheGetRequest:YES shoulCachePost:YES];         //数据缓存
     [HYBNetworking setTimeout:20.f];                                //超时回调
 }
+
 - (void)setUpKeyWindow
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeLaunchView) name:kNFRemoveLaunchViewNoti object:nil];
@@ -111,6 +107,27 @@
     _window.rootViewController = nav;
     [_window makeKeyAndVisible];
 }
+
+- (void)checkUpVersion
+{
+    // 埋点  用户第一次安装时间
+    NSString *firstVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kNFFirstVersionKey];
+    if (kStringIsEmpty(firstVersion)) {
+        [[NSUserDefaults standardUserDefaults] setObject:[NFOnlineManager currentVerson] forKey:kNFFirstVersionKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+//    if (![NFOnlineManager bUpdate]) return;
+//    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kAppName message:@"有新版本更新啦，更多功能等你来体验 ^_^" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"更新", nil];
+//    [alert show];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) return;
+    NSURL *updateUrl = [NSURL URLWithString:kAppUrl];
+    [[UIApplication sharedApplication] openURL:updateUrl];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
