@@ -46,7 +46,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         return;
     }
-    NSString *message = [NSString stringWithFormat:@"亲，如果%@有为您带来方便，还请支持下我们^_^",kAppName];
+    NSString *message = [NSString stringWithFormat:@"亲，%@一直致力于做无如果您有为您带来方便，还请支持下我们^_^",kAppName];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kAppName message:message delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alert show];
 }

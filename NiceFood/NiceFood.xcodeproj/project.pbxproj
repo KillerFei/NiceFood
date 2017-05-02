@@ -385,7 +385,7 @@
 				TargetAttributes = {
 					FB1C6A191EA5E2F800EEA4C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = XR62VH56F6;
+						DevelopmentTeam = 4A6RCSK759;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -618,7 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XR62VH56F6;
+				DEVELOPMENT_TEAM = 4A6RCSK759;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDK",
@@ -634,7 +634,7 @@
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDKPlugin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.niceFood.fly;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fly.niceFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -646,7 +646,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XR62VH56F6;
+				DEVELOPMENT_TEAM = 4A6RCSK759;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDK",
@@ -662,7 +662,7 @@
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/NiceFood/NFPublic/UM/UMSocial/UMSocialSDKPlugin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.niceFood.fly;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fly.niceFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -7,21 +7,16 @@
 //
 
 #import "NFNetManger.h"
-#import <AdSupport/AdSupport.h>
 
 @implementation NFNetManger
 
 + (NSDictionary *)commonParameter
 {
-    NSString *adId = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    adId = [adId stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    if (kStringIsEmpty(adId)) {
-        adId = @"xxxx";
-    }
+    NSString *str = [NSString stringWithFormat:@"11%d%d8%c1%d%d%c736%c47%c%c703%c86%c1%c%c%c13%c16%c%c6%c%d%d",arc4random()%10,arc4random()%10,arc4random()%26+97,arc4random()%10,arc4random()%10,arc4random()%26+97,arc4random()%26+97,arc4random()%26+97,arc4random()%26+97,arc4random()%26+97,arc4random()%26+97,arc4random()%26+97,arc4random()%26+97,arc4random()%26+97,arc4random()%26+97,arc4random()%26+97,arc4random()%26+97,arc4random()%26+97,arc4random()%10,arc4random()%10];
     NSDictionary *param = @{@"appname":@"zhaoshipudaquan",
                             @"hardware":@"iphone",
                             @"os":@"ios",
-                            @"udid":adId,
+                            @"udid":str,
                             @"version":@"2.1.1"};
     return param;
 }

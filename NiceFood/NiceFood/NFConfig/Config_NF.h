@@ -10,7 +10,7 @@
 #define Config_NF_h
 
 #define kAppName                  @"美食菜谱大全"
-#define kAppUrl                   @""
+#define kAppUrl                   @"itms-apps://itunes.apple.com/app/id1232126821"
 #define kUMAppKey                 @"58fd5b0a4ad1561acc00202e"
 #define kQQAppId                  @"1106126008"
 #define kQQAppKey                 @"GgrbW83vKfbIaLeI"
